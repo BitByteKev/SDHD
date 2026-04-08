@@ -383,6 +383,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 
+// ---- Back to Top ----
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
 // ---- 3D Card Tilt Effect ----
 const MAX_TILT = 8; // max degrees of rotation
 
