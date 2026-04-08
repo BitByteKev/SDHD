@@ -540,8 +540,7 @@ h1, h2, h3, h4 {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
 }
 
 .service-card.featured {
@@ -731,8 +730,7 @@ h1, h2, h3, h4 {
 }
 
 .pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
 }
 
 .pricing-card--featured {
@@ -1659,6 +1657,120 @@ h1, h2, h3, h4 {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================================
+   3D EFFECTS
+   ============================================ */
+
+/* Perspective containers */
+.services-grid,
+.pricing-grid {
+  perspective: 1400px;
+}
+
+/* Cards: GPU-accelerated 3D */
+.service-card,
+.pricing-card,
+.review-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Service icons: 3D pop on hover */
+.service-icon {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(.34,1.56,.64,1);
+}
+.service-card:hover .service-icon {
+  transform: scale(1.3) rotateY(20deg) translateZ(10px);
+}
+
+/* Step numbers: 3D lift */
+.step-number {
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.35s ease;
+}
+.step:hover .step-number {
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 18px 40px rgba(117,255,51,.5), 0 0 0 4px rgba(117,255,51,.15);
+}
+
+/* Hero badge: floating 3D animation */
+@keyframes float3d {
+  0%, 100% { transform: translateY(0) rotateX(0deg); }
+  50%       { transform: translateY(-8px) rotateX(4deg); }
+}
+.hero-badge {
+  animation: float3d 3.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Hero h1: layered depth shadow */
+.hero-content h1 {
+  text-shadow:
+    1px 1px 0 rgba(0,0,0,.5),
+    2px 2px 0 rgba(0,0,0,.3),
+    4px 4px 14px rgba(0,0,0,.35);
+}
+
+/* Hero highlight: neon glow depth */
+.hero-highlight {
+  display: inline-block;
+  text-shadow: 0 0 30px rgba(117,255,51,.5), 0 0 60px rgba(117,255,51,.2);
+}
+
+/* Trust items: 3D lift on hover */
+.trust-item {
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+  cursor: default;
+}
+.trust-item:hover {
+  transform: translateY(-6px) scale(1.07);
+}
+
+/* Buttons: 3D press on click */
+.btn:active {
+  transform: translateY(3px) scale(0.97) !important;
+  border-bottom-width: 2px !important;
+  box-shadow: none !important;
+}
+
+/* Pricing featured: deeper shadow stack */
+.pricing-card--featured {
+  box-shadow: 0 8px 40px rgba(127,0,255,.2), 0 4px 0 rgba(127,0,255,.35), 0 0 0 1px rgba(127,0,255,.1);
+}
+
+/* Guarantee items: 3D lift */
+.guarantee-item {
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
+}
+.guarantee-item:hover {
+  transform: translateY(-5px) scale(1.06);
+}
+
+/* Area tags: 3D pop */
+.area-tags span {
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.area-tags span:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(127,0,255,.3);
+  background: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* Social links: 3D spin */
+.social-link {
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background 0.25s ease, color 0.25s ease !important;
+}
+.social-link:hover {
+  transform: translateY(-5px) rotateZ(10deg) scale(1.2) !important;
+}
+
+/* Nav CTA: 3D press */
+.nav-cta:active {
+  transform: translateY(2px) !important;
+  border-bottom-width: 1px !important;
 }
 
 /* ============================================

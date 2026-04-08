@@ -383,6 +383,52 @@ document.addEventListener('keydown', (e) => {
 });
 
 
+// ---- 3D Card Tilt Effect ----
+const MAX_TILT = 8; // max degrees of rotation
+
+function applyTilt(selector, baseCssTransform) {
+  document.querySelectorAll(selector).forEach(card => {
+    let rafId;
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'box-shadow 0.15s ease';
+    });
+
+    card.addEventListener('mousemove', (e) => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotX = (((y - cy) / cy) * -MAX_TILT).toFixed(2);
+        const rotY = (((x - cx) / cx) *  MAX_TILT).toFixed(2);
+        const shadowX = (rotY * 2.5).toFixed(0);
+        const shadowY = (-rotX * 2.5).toFixed(0);
+        card.style.transform = `${baseCssTransform}perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px)`;
+        card.style.boxShadow = `${shadowX}px ${shadowY}px 40px rgba(0,0,0,.2)`;
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(rafId);
+      card.style.transition = 'transform 0.6s cubic-bezier(.03,.98,.52,.99), box-shadow 0.6s ease';
+      card.style.transform = baseCssTransform.trim() || '';
+      card.style.boxShadow = '';
+    });
+  });
+}
+
+// Only apply on devices that support hover (not touch-only)
+if (window.matchMedia('(hover: hover)').matches) {
+  applyTilt('.service-card', '');
+  applyTilt('.review-card', '');
+  applyTilt('.pricing-card:not(.pricing-card--featured)', '');
+  applyTilt('.pricing-card--featured', 'scale(1.05) ');
+}
+
+
 // ---- Active nav link on scroll ----
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
