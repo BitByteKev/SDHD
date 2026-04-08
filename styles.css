@@ -808,15 +808,56 @@ h1, h2, h3, h4 {
 
 .pricing-features li:last-child { border-bottom: none; }
 
-.pricing-note {
-  text-align: center;
-  font-size: .85rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  font-weight: 300;
+.dump-callout {
+  background: var(--color-secondary);
 }
 
-.pricing-note a { color: var(--color-primary); text-decoration: underline; }
+.dump-callout-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: linear-gradient(135deg, rgba(127,0,255,.15) 0%, rgba(117,255,51,.06) 100%);
+  border: 1px solid rgba(127,0,255,.25);
+  border-bottom: var(--lime-border);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+}
+
+.dump-callout-icon {
+  font-size: 3.5rem;
+  flex-shrink: 0;
+}
+
+.dump-callout-text {
+  flex: 1;
+}
+
+.dump-callout-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.dump-callout-text p {
+  font-size: 1rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.65;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+@media (max-width: 768px) {
+  .dump-callout-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 24px;
+    gap: 20px;
+  }
+  .dump-callout-text p { max-width: 100%; }
+  .dump-callout-inner .btn { width: 100%; justify-content: center; }
+}
 
 /* ============================================
    TESTIMONIALS
