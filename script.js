@@ -264,25 +264,29 @@ function addFiles(files) {
   renderPreviews();
 }
 
-fileInput.addEventListener('change', () => {
-  addFiles(Array.from(fileInput.files));
-  fileInput.value = ''; // reset so same file can be re-added after removal
-});
+if (fileInput) {
+  fileInput.addEventListener('change', () => {
+    addFiles(Array.from(fileInput.files));
+    fileInput.value = '';
+  });
+}
 
-fileDropZone.addEventListener('dragover', (e) => {
-  e.preventDefault();
-  fileDropZone.classList.add('dragover');
-});
+if (fileDropZone) {
+  fileDropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    fileDropZone.classList.add('dragover');
+  });
 
-fileDropZone.addEventListener('dragleave', () => {
-  fileDropZone.classList.remove('dragover');
-});
+  fileDropZone.addEventListener('dragleave', () => {
+    fileDropZone.classList.remove('dragover');
+  });
 
-fileDropZone.addEventListener('drop', (e) => {
-  e.preventDefault();
-  fileDropZone.classList.remove('dragover');
-  addFiles(Array.from(e.dataTransfer.files));
-});
+  fileDropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    fileDropZone.classList.remove('dragover');
+    addFiles(Array.from(e.dataTransfer.files));
+  });
+}
 
 // Set min date for date picker to today
 const dateInput = document.getElementById('date');
@@ -295,7 +299,7 @@ if (dateInput) {
 }
 
 // Form submit
-quoteForm.addEventListener('submit', async (e) => {
+if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   // Validate all fields
@@ -366,15 +370,19 @@ quoteForm.addEventListener('submit', async (e) => {
 // ---- Lightbox ----
 function openLightbox(src, caption) {
   const lightbox = document.getElementById('lightbox');
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightboxImg').alt = caption;
+  const lightboxImg = document.getElementById('lightboxImg');
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = caption;
   document.getElementById('lightboxCaption').textContent = caption;
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
   document.body.style.overflow = '';
 }
 
