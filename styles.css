@@ -2034,3 +2034,19 @@ a.service-card:hover {
   /* Step number smaller */
   .step-number { width: 56px; height: 56px; font-size: 1.4rem; }
 }
+
+/* ===== FAQ SECTION ===== */
+.faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 860px; margin: 0 auto; }
+.faq-item { background: #fff; border: 1.5px solid #e8e2f5; border-radius: 12px; overflow: hidden; transition: border-color .2s; }
+.faq-item[open] { border-color: #7F00FF; }
+.faq-question { padding: 20px 24px; font-size: 1.05rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #1a1a2e; }
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after { content: '+'; font-size: 1.5rem; color: #7F00FF; flex-shrink: 0; line-height: 1; }
+.faq-item[open] .faq-question::after { content: '\2212'; }
+.faq-answer { padding: 0 24px 20px; color: #555; line-height: 1.75; font-size: .97rem; }
+.faq-answer p { margin: 0; }
+.faq-answer a { color: #7F00FF; }
+@media (max-width: 480px) {
+  .faq-question { padding: 16px 18px; font-size: .95rem; }
+  .faq-answer { padding: 0 18px 16px; }
+}

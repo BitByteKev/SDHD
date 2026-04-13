@@ -28,7 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sdhaulinganddemo.com/furniture-removal/" />
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Furniture &amp; Appliance Removal — San Diego Hauling &amp; Demo" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Furniture &amp; Appliance Removal San Diego" />
@@ -48,16 +51,113 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://sdhaulinganddemo.com/furniture-removal/#service",
       "name": "Furniture & Appliance Removal",
       "description": "Professional furniture and appliance removal in San Diego. We haul sofas, mattresses, refrigerators, washers, dryers, TVs, and all large items.",
+      "category": "Junk Removal",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://sdhaulinganddemo.com/#business",
         "name": "San Diego Hauling & Demo",
         "telephone": "+16198414193",
         "url": "https://sdhaulinganddemo.com"
       },
-      "areaServed": "San Diego County, CA",
-      "url": "https://sdhaulinganddemo.com/furniture-removal/"
+      "areaServed": {"@type": "AdministrativeArea", "name": "San Diego County, CA"},
+      "url": "https://sdhaulinganddemo.com/furniture-removal/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Furniture & Appliance Removal",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sofa & Couch Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mattress Removal & Disposal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Refrigerator & Appliance Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "TV & Electronics Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hot Tub Removal"}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Get Furniture Removed in San Diego",
+      "description": "Schedule fast, affordable furniture and appliance removal with San Diego Hauling & Demo in 3 steps.",
+      "totalTime": "PT2H",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": "1",
+          "name": "Request Your Free Quote",
+          "text": "Fill out the form or text us at (619) 841-4193. Tell us what needs to go and we'll confirm availability — often same day.",
+          "url": "https://sdhaulinganddemo.com/furniture-removal/#contact"
+        },
+        {
+          "@type": "HowToStep",
+          "position": "2",
+          "name": "We Show Up & Price It",
+          "text": "Our crew arrives on time, looks at the items, and gives you an all-inclusive upfront price. No surprises.",
+          "url": "https://sdhaulinganddemo.com/furniture-removal/#contact"
+        },
+        {
+          "@type": "HowToStep",
+          "position": "3",
+          "name": "Gone in One Trip",
+          "text": "We do all the heavy lifting, carry it out, and leave the space broom-swept clean. You pay only when the job is done.",
+          "url": "https://sdhaulinganddemo.com/furniture-removal/#contact"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does furniture removal cost in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Furniture removal in San Diego starts at $99 for a single item and ranges up to $400+ for multiple large pieces. Final pricing depends on the number, size, and weight of items. We provide a free upfront quote — you only pay when the job is done."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you remove mattresses in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We remove mattresses of all sizes — twin, full, queen, king, and California king. We properly dispose of all mattresses in compliance with San Diego County regulations and recycle materials whenever possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you remove refrigerators and large appliances?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We remove all major appliances including refrigerators, freezers, washers, dryers, stoves, ovens, and dishwashers. We handle all the heavy lifting and ensure responsible disposal, including proper refrigerant handling where required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you donate or recycle removed furniture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whenever possible, yes. We sort usable items and donate them to local charities, recycle metal and electronics, and only send items to the landfill as a last resort. Clean disposal is part of every job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you remove furniture in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Same-day furniture removal is often available in San Diego. Call or text us at (619) 841-4193 to check availability. We typically schedule 2-hour arrival windows and can frequently accommodate last-minute requests."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -211,6 +311,39 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Furniture Removal FAQs</h2>
+          <p>Common questions about our furniture and appliance removal service.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How much does furniture removal cost in San Diego?</summary>
+            <div class="faq-answer"><p>Furniture removal in San Diego starts at $99 for a single item and ranges up to $400+ for multiple large pieces. Final pricing depends on the number, size, and weight of items. We provide a free upfront quote — you only pay when the job is done.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you remove mattresses in San Diego?</summary>
+            <div class="faq-answer"><p>Yes! We remove mattresses of all sizes — twin, full, queen, king, and California king. We properly dispose of all mattresses in compliance with San Diego County regulations and recycle materials whenever possible.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you remove refrigerators and large appliances?</summary>
+            <div class="faq-answer"><p>Absolutely. We remove all major appliances including refrigerators, freezers, washers, dryers, stoves, ovens, and dishwashers. We handle all the heavy lifting and ensure responsible disposal, including proper refrigerant handling where required.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you donate or recycle removed furniture?</summary>
+            <div class="faq-answer"><p>Whenever possible, yes. We sort usable items and donate them to local charities, recycle metal and electronics, and only send items to the landfill as a last resort. Clean disposal is part of every job.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How quickly can you remove furniture in San Diego?</summary>
+            <div class="faq-answer"><p>Same-day furniture removal is often available. Call or text us at <a href="sms:+16198414193">(619) 841-4193</a> to check availability. We typically schedule 2-hour arrival windows and can frequently accommodate last-minute requests.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact / Quote Form -->
     <section class="section section-alt" id="contact" aria-label="Get a Quote">
       <div class="container">
@@ -255,7 +388,7 @@
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
@@ -329,7 +462,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>

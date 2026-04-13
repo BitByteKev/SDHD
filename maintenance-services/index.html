@@ -28,7 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sdhaulinganddemo.com/maintenance-services/" />
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Property Maintenance Services San Diego — Licensed &amp; Insured" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Property Maintenance Services San Diego" />
@@ -48,16 +51,82 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://sdhaulinganddemo.com/maintenance-services/#service",
       "name": "Property Maintenance Services",
       "description": "General property maintenance services in San Diego including cleanups, hauling, debris removal, pressure washing, and general handyman tasks for homes and businesses.",
+      "category": "Property Maintenance",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://sdhaulinganddemo.com/#business",
         "name": "San Diego Hauling & Demo",
         "telephone": "+16198414193",
         "url": "https://sdhaulinganddemo.com"
       },
-      "areaServed": "San Diego County, CA",
-      "url": "https://sdhaulinganddemo.com/maintenance-services/"
+      "areaServed": {"@type": "AdministrativeArea", "name": "San Diego County, CA"},
+      "url": "https://sdhaulinganddemo.com/maintenance-services/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Maintenance Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Property Cleanup"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hauling & Debris Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pressure Washing"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "General Handyman Tasks"}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What maintenance services do you offer in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a range of property maintenance services including general cleanups, hauling and debris removal, pressure washing, yard clearing, and general handyman-style tasks for homes and businesses throughout San Diego County."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer pressure washing in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We offer professional pressure washing for driveways, patios, sidewalks, fences, building exteriors, and more. Pressure washing is available as a standalone service or as part of a larger property cleanup package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help with ongoing property cleanup in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We work with residential and commercial property owners who need regular maintenance cleanups — monthly, quarterly, or on an as-needed basis. Contact us to discuss a recurring maintenance schedule that fits your needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do maintenance services cost in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maintenance service pricing varies based on the type and scope of work. Small cleanup jobs start around $150, while larger or recurring maintenance packages are custom-quoted. Contact us for a free assessment and upfront quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your maintenance services available for rental and commercial properties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We regularly work with landlords, property managers, HOAs, and commercial property owners throughout San Diego County. We can handle tenant turnover cleanups, regular property maintenance, and more."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -207,6 +276,39 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Maintenance Services FAQs</h2>
+          <p>Common questions about our property maintenance service in San Diego.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">What maintenance services do you offer in San Diego?</summary>
+            <div class="faq-answer"><p>We offer a range of property maintenance services including general cleanups, hauling and debris removal, pressure washing, yard clearing, and general handyman-style tasks for homes and businesses throughout San Diego County.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you offer pressure washing in San Diego?</summary>
+            <div class="faq-answer"><p>Yes. We offer professional pressure washing for driveways, patios, sidewalks, fences, building exteriors, and more. Pressure washing is available as a standalone service or as part of a larger property cleanup package.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you help with ongoing property cleanup in San Diego?</summary>
+            <div class="faq-answer"><p>Yes. We work with residential and commercial property owners who need regular maintenance cleanups — monthly, quarterly, or on an as-needed basis. Contact us to discuss a recurring maintenance schedule that fits your needs.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much do maintenance services cost in San Diego?</summary>
+            <div class="faq-answer"><p>Maintenance service pricing varies based on the type and scope of work. Small cleanup jobs start around $150, while larger or recurring maintenance packages are custom-quoted. Contact us for a free assessment and upfront quote.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Are your maintenance services available for rental and commercial properties?</summary>
+            <div class="faq-answer"><p>Yes. We regularly work with landlords, property managers, HOAs, and commercial property owners throughout San Diego County. We can handle tenant turnover cleanups, regular property maintenance, and more.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="contact" aria-label="Get a Maintenance Quote">
       <div class="container">
         <div class="contact-inner">
@@ -250,7 +352,7 @@
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
@@ -324,7 +426,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>

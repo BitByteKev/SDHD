@@ -35,29 +35,46 @@
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="San Diego Hauling &amp; Demo — Junk Removal &amp; Demolition Services" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="San Diego Hauling &amp; Demo | Junk Removal" />
   <meta name="twitter:description" content="Fast, affordable junk removal in San Diego. Same-day service available. Get a free quote!" />
   <meta name="twitter:image" content="https://sdhaulinganddemo.com/logo.png" />
-  <!-- Schema.org Local Business -->
+  <!-- Schema.org: LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": "https://sdhaulinganddemo.com/#business",
     "name": "San Diego Hauling & Demo",
+    "legalName": "San Diego Hauling & Demo",
     "description": "Fast, affordable junk removal and demolition services in San Diego County. Furniture, appliances, yard waste, construction debris, estate cleanouts and more.",
+    "slogan": "Fast, Affordable, Done Right",
     "telephone": "+16198414193",
     "email": "contact@sdhaulinganddemo.com",
     "url": "https://sdhaulinganddemo.com",
-    "logo": "https://sdhaulinganddemo.com/logo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "@id": "https://sdhaulinganddemo.com/#logo",
+      "url": "https://sdhaulinganddemo.com/logo.png",
+      "width": 512,
+      "height": 512,
+      "caption": "San Diego Hauling & Demo Logo"
+    },
     "image": "https://sdhaulinganddemo.com/logo.png",
     "priceRange": "$$",
+    "paymentAccepted": "Cash, Credit Card, Debit Card, Venmo, Zelle",
+    "currenciesAccepted": "USD",
+    "foundingDate": "2000",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "San Diego",
       "addressRegion": "CA",
+      "postalCode": "92115",
       "addressCountry": "US"
     },
     "geo": {
@@ -65,11 +82,33 @@
       "latitude": 32.7157,
       "longitude": -117.1611
     },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=San+Diego+Hauling+%26+Demo+San+Diego+CA",
+    "serviceArea": {
+      "@type": "AdministrativeArea",
+      "name": "San Diego County, CA"
+    },
     "areaServed": [
-      "San Diego", "Chula Vista", "El Cajon", "La Mesa", "Santee",
-      "Spring Valley", "National City", "Lemon Grove", "Poway",
-      "Escondido", "Oceanside", "Vista", "San Marcos", "Lakeside",
-      "Alpine", "Coronado"
+      {"@type": "City", "name": "San Diego"},
+      {"@type": "City", "name": "Chula Vista"},
+      {"@type": "City", "name": "El Cajon"},
+      {"@type": "City", "name": "La Mesa"},
+      {"@type": "City", "name": "Santee"},
+      {"@type": "City", "name": "Spring Valley"},
+      {"@type": "City", "name": "National City"},
+      {"@type": "City", "name": "Lemon Grove"},
+      {"@type": "City", "name": "Poway"},
+      {"@type": "City", "name": "Escondido"},
+      {"@type": "City", "name": "Oceanside"},
+      {"@type": "City", "name": "Vista"},
+      {"@type": "City", "name": "San Marcos"},
+      {"@type": "City", "name": "Lakeside"},
+      {"@type": "City", "name": "Alpine"},
+      {"@type": "City", "name": "Coronado"}
+    ],
+    "knowsAbout": [
+      "Junk Removal", "Demolition Services", "Estate Cleanout",
+      "Furniture Removal", "Appliance Removal", "Yard Waste Removal",
+      "Graffiti Removal", "Commercial Junk Removal", "Debris Removal"
     ],
     "openingHoursSpecification": [
       {
@@ -89,6 +128,7 @@
       "@type": "AggregateRating",
       "ratingValue": "4.7",
       "bestRating": "5",
+      "worstRating": "1",
       "ratingCount": "2000"
     },
     "contactPoint": {
@@ -100,15 +140,126 @@
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Junk Removal Services",
+      "name": "Junk Removal & Demolition Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture & Appliance Removal" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Debris Removal" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole-Home Cleanouts" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yard & Green Waste Removal" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Junk Removal" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture & Appliance Removal", "url": "https://sdhaulinganddemo.com/furniture-removal/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Debris Removal & Demolition", "url": "https://sdhaulinganddemo.com/demolition-services/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate & Home Cleanouts", "url": "https://sdhaulinganddemo.com/estate-cleanout/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yard & Green Waste Removal", "url": "https://sdhaulinganddemo.com/yard-waste-removal/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Junk Removal", "url": "https://sdhaulinganddemo.com/commercial-junk-removal/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Graffiti Removal", "url": "https://sdhaulinganddemo.com/graffiti-removal/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Property Maintenance Services", "url": "https://sdhaulinganddemo.com/maintenance-services/" } }
       ]
     }
+  }
+  </script>
+  <!-- Schema.org: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://sdhaulinganddemo.com/#website",
+    "url": "https://sdhaulinganddemo.com",
+    "name": "San Diego Hauling & Demo",
+    "description": "Fast, affordable junk removal and demolition services in San Diego County.",
+    "publisher": {"@id": "https://sdhaulinganddemo.com/#business"},
+    "inLanguage": "en-US"
+  }
+  </script>
+  <!-- Schema.org: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Schedule Junk Removal in San Diego",
+    "description": "Get fast, affordable junk removal from San Diego Hauling & Demo in 3 simple steps.",
+    "totalTime": "PT2H",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "minValue": "99",
+      "maxValue": "600"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": "1",
+        "name": "Book Online or Call",
+        "text": "Fill out our quick quote form or call/text us at (619) 841-4193. Tell us what you need removed and we'll confirm availability — often same day or next day.",
+        "url": "https://sdhaulinganddemo.com/#contact"
+      },
+      {
+        "@type": "HowToStep",
+        "position": "2",
+        "name": "We Show Up & Give a Price",
+        "text": "Our crew arrives at your scheduled 2-hour window, reviews the items, and gives you an all-inclusive upfront price — no surprises.",
+        "url": "https://sdhaulinganddemo.com/#how-it-works"
+      },
+      {
+        "@type": "HowToStep",
+        "position": "3",
+        "name": "We Haul It Away",
+        "text": "You say the word, we do all the lifting and loading. We leave your space broom-swept clean and you only pay when the job is done.",
+        "url": "https://sdhaulinganddemo.com/#how-it-works"
+      }
+    ]
+  }
+  </script>
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does junk removal cost in San Diego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk removal in San Diego typically starts around $99 for small loads (1–5 items) and ranges up to $400–$600 for a full truck. Final pricing depends on volume, weight, and type of materials. San Diego Hauling & Demo provides free upfront quotes with no hidden fees — you only pay when the job is done."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer same-day junk removal in San Diego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Same-day junk removal is available in San Diego, subject to schedule availability. Text or call us at (619) 841-4193 and we'll do our best to dispatch a crew the same day. We serve all of San Diego County Monday through Saturday, 8am–7pm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas of San Diego County do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve all of San Diego County, including San Diego, Chula Vista, El Cajon, La Mesa, Santee, Spring Valley, National City, Lemon Grove, Poway, Escondido, Oceanside, Vista, San Marcos, Lakeside, Alpine, and Coronado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you licensed and insured for junk removal in San Diego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. San Diego Hauling & Demo is fully licensed, bonded, and insured. We hold CA Contractor License #1135398 and a D-63 Post Construction & Demolition Cleanup certification, covering all junk removal and demolition services in San Diego County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What items do you NOT remove?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We cannot remove hazardous materials such as asbestos, liquid paint, propane tanks, motor oil, chemicals, or biohazardous waste. For everything else — furniture, appliances, yard waste, construction debris, and more — we've got you covered. Text us a photo at (619) 841-4193 if you're unsure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get a free junk removal quote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Getting a free quote is easy: fill out the quote form on this page, text a description or photo of your junk to (619) 841-4193, or email contact@sdhaulinganddemo.com. We'll confirm pricing before any work begins and you only pay when the job is done."
+        }
+      }
+    ]
   }
   </script>
   <title>San Diego Hauling &amp; Demo | Junk Removal Services</title>
@@ -454,6 +605,43 @@
     </div>
   </section>
 
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq" aria-label="Frequently Asked Questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our junk removal and demolition services.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">How much does junk removal cost in San Diego?</summary>
+          <div class="faq-answer"><p>Junk removal in San Diego typically starts around $99 for small loads (1–5 items) and ranges up to $400–$600 for a full truck. Final pricing depends on volume, weight, and type of materials. We provide free upfront quotes with no hidden fees — you only pay when the job is done.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Do you offer same-day junk removal in San Diego?</summary>
+          <div class="faq-answer"><p>Yes! Same-day junk removal is available in San Diego, subject to schedule availability. Text or call us at <a href="sms:+16198414193">(619) 841-4193</a> and we'll do our best to dispatch a crew the same day. We serve all of San Diego County Monday through Saturday, 8am–7pm.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What areas of San Diego County do you serve?</summary>
+          <div class="faq-answer"><p>We serve all of San Diego County, including San Diego, Chula Vista, El Cajon, La Mesa, Santee, Spring Valley, National City, Lemon Grove, Poway, Escondido, Oceanside, Vista, San Marcos, Lakeside, Alpine, and Coronado.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Are you licensed and insured for junk removal in San Diego?</summary>
+          <div class="faq-answer"><p>Yes. We are fully licensed, bonded, and insured. We hold CA Contractor License #1135398 and a D-63 Post Construction &amp; Demolition Cleanup certification, covering all junk removal and demolition services throughout San Diego County.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What items do you NOT remove?</summary>
+          <div class="faq-answer"><p>We cannot remove hazardous materials such as asbestos, liquid paint, propane tanks, motor oil, chemicals, or biohazardous waste. For everything else — furniture, appliances, yard waste, construction debris, and more — we've got you covered. Text us a photo at <a href="sms:+16198414193">(619) 841-4193</a> if you're unsure.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How do I get a free junk removal quote?</summary>
+          <div class="faq-answer"><p>Fill out the quote form below, text a description or photo to <a href="sms:+16198414193">(619) 841-4193</a>, or email <a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a>. We'll confirm pricing before any work begins and you only pay when the job is done.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CONTACT / QUOTE ===== -->
   <section class="section section-alt" id="contact" aria-label="Contact">
     <div class="container">
@@ -507,7 +695,7 @@
             </div>
             <div class="form-group">
               <label for="zip">Zip Code *</label>
-              <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+              <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
               <span class="form-error" id="zipError"></span>
             </div>
           </div>
@@ -623,7 +811,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>

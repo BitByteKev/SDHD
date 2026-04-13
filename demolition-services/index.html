@@ -28,7 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sdhaulinganddemo.com/demolition-services/" />
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Demolition Services San Diego — D-63 Licensed" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Demolition Services San Diego | D-63 Licensed" />
@@ -48,16 +51,112 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://sdhaulinganddemo.com/demolition-services/#service",
       "name": "Demolition Services",
       "description": "D-63 licensed interior and exterior demolition in San Diego. We tear down walls, sheds, decks, fences, and break concrete — then haul everything away.",
+      "category": "Demolition & Debris Removal",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://sdhaulinganddemo.com/#business",
         "name": "San Diego Hauling & Demo",
         "telephone": "+16198414193",
         "url": "https://sdhaulinganddemo.com"
       },
-      "areaServed": "San Diego County, CA",
-      "url": "https://sdhaulinganddemo.com/demolition-services/"
+      "areaServed": {"@type": "AdministrativeArea", "name": "San Diego County, CA"},
+      "url": "https://sdhaulinganddemo.com/demolition-services/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Demolition Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Demolition"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Shed & Structure Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Deck & Fence Demolition"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Concrete Breaking & Removal"}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Schedule Demolition Services in San Diego",
+      "description": "Get fast, licensed demolition from San Diego Hauling & Demo in 3 simple steps.",
+      "totalTime": "P1D",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": "1",
+          "name": "Get a Free Quote",
+          "text": "Tell us what needs to come down. We assess the scope and give you an upfront, all-inclusive price.",
+          "url": "https://sdhaulinganddemo.com/demolition-services/#contact"
+        },
+        {
+          "@type": "HowToStep",
+          "position": "2",
+          "name": "We Tear It Down",
+          "text": "Our D-63 licensed crew safely demolishes the structure, taking care to protect surrounding areas.",
+          "url": "https://sdhaulinganddemo.com/demolition-services/#contact"
+        },
+        {
+          "@type": "HowToStep",
+          "position": "3",
+          "name": "We Haul It All Away",
+          "text": "Every piece of debris gets loaded and hauled. We leave the site clean and ready for what's next.",
+          "url": "https://sdhaulinganddemo.com/demolition-services/#contact"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a permit for shed removal in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most residential shed removals don't require a permit, particularly for structures under 120 square feet. However, requirements vary by city and HOA. Our D-63 licensed crew handles the full removal and debris cleanup — contact us and we'll help clarify for your specific situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does demolition cost in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Demolition costs vary by project scope. Shed removals typically start at $300–$500, deck demolitions range from $400–$800, and interior demo projects are priced by scope of work. All quotes are free and upfront — no surprises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you licensed for demolition in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We hold a D-63 Post Construction & Demolition Cleanup certification and CA Contractor License #1135398. We are fully licensed, bonded, and insured for all demolition work throughout San Diego County."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle concrete breaking and removal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We break and remove concrete slabs, driveways, patios, and sidewalks. Our crew uses professional equipment to break up the concrete and hauls all debris away in one trip — leaving the site clean and ready."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does interior demolition take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A single-room interior demo typically takes 1–2 days. Larger multi-room projects may take several days depending on scope. We'll give you a realistic timeline and upfront quote before starting any work."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -212,6 +311,39 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Demolition Services FAQs</h2>
+          <p>Common questions about our demolition and debris removal service.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Do I need a permit for shed removal in San Diego?</summary>
+            <div class="faq-answer"><p>Most residential shed removals don't require a permit, particularly for structures under 120 square feet. However, requirements vary by city and HOA. Our D-63 licensed crew handles the full removal and debris cleanup — contact us and we'll help clarify for your specific situation.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much does demolition cost in San Diego?</summary>
+            <div class="faq-answer"><p>Demolition costs vary by project scope. Shed removals typically start at $300–$500, deck demolitions range from $400–$800, and interior demo projects are priced by scope of work. All quotes are free and upfront — no surprises.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Are you licensed for demolition in California?</summary>
+            <div class="faq-answer"><p>Yes. We hold a D-63 Post Construction &amp; Demolition Cleanup certification and CA Contractor License #1135398. We are fully licensed, bonded, and insured for all demolition work throughout San Diego County.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you handle concrete breaking and removal?</summary>
+            <div class="faq-answer"><p>Yes. We break and remove concrete slabs, driveways, patios, and sidewalks. Our crew uses professional equipment to break up the concrete and hauls all debris away in one trip — leaving the site clean and ready.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How long does interior demolition take?</summary>
+            <div class="faq-answer"><p>A single-room interior demo typically takes 1–2 days. Larger multi-room projects may take several days depending on scope. We'll give you a realistic timeline and upfront quote before starting any work.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section class="section section-alt" id="contact" aria-label="Get a Demo Quote">
       <div class="container">
@@ -256,7 +388,7 @@
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
@@ -330,7 +462,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>

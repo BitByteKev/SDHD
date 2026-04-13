@@ -28,7 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sdhaulinganddemo.com/yard-waste-removal/" />
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Yard &amp; Green Waste Removal — San Diego Hauling &amp; Demo" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yard &amp; Green Waste Removal San Diego" />
@@ -48,16 +51,82 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://sdhaulinganddemo.com/yard-waste-removal/#service",
       "name": "Yard & Green Waste Removal",
       "description": "Professional yard and green waste removal in San Diego. We haul tree branches, stumps, landscaping debris, old fencing, and hot tubs.",
+      "category": "Yard Waste & Green Waste Removal",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://sdhaulinganddemo.com/#business",
         "name": "San Diego Hauling & Demo",
         "telephone": "+16198414193",
         "url": "https://sdhaulinganddemo.com"
       },
-      "areaServed": "San Diego County, CA",
-      "url": "https://sdhaulinganddemo.com/yard-waste-removal/"
+      "areaServed": {"@type": "AdministrativeArea", "name": "San Diego County, CA"},
+      "url": "https://sdhaulinganddemo.com/yard-waste-removal/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Yard & Green Waste Removal",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tree Branch & Debris Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Old Fencing Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hot Tub & Spa Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Landscaping Debris Removal"}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What yard waste do you remove in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We remove tree branches, stumps, landscaping debris, old fencing, dirt and soil, rocks, pavers, hot tubs, spas, lawn furniture, and all other outdoor debris. If it's in your yard, we can likely haul it away."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does yard waste removal cost in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yard waste removal starts around $99 for small loads and ranges up to $400+ for larger amounts. Final pricing depends on volume and type of materials. We provide free upfront quotes with no hidden fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you remove hot tubs in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Hot tub and spa removal is one of our specialties. We carefully break down and haul away hot tubs of any size. The process typically involves draining, cutting into manageable sections, and hauling away all debris. Contact us for a free hot tub removal quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you remove tree stumps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can haul away cut or broken-up stumps. Full stump grinding (in-ground extraction) requires specialized equipment — contact us to discuss your specific situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is green waste disposal and how do you handle it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Green waste includes plant material such as grass, leaves, branches, and landscaping trimmings. We haul all green waste to approved disposal and composting facilities in San Diego County, keeping it out of the landfill whenever possible."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -207,6 +276,39 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Yard Waste Removal FAQs</h2>
+          <p>Common questions about our yard and green waste removal service.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">What yard waste do you remove in San Diego?</summary>
+            <div class="faq-answer"><p>We remove tree branches, stumps, landscaping debris, old fencing, dirt and soil, rocks, pavers, hot tubs, spas, lawn furniture, and all other outdoor debris. If it's in your yard, we can likely haul it away.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much does yard waste removal cost in San Diego?</summary>
+            <div class="faq-answer"><p>Yard waste removal starts around $99 for small loads and ranges up to $400+ for larger amounts. Final pricing depends on volume and type of materials. We provide free upfront quotes with no hidden fees.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you remove hot tubs in San Diego?</summary>
+            <div class="faq-answer"><p>Yes! Hot tub and spa removal is one of our specialties. We carefully break down and haul away hot tubs of any size. The process typically involves draining, cutting into manageable sections, and hauling away all debris. Contact us at <a href="sms:+16198414193">(619) 841-4193</a> for a free hot tub removal quote.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you remove tree stumps?</summary>
+            <div class="faq-answer"><p>We can haul away cut or broken-up stumps. Full stump grinding (in-ground extraction) requires specialized equipment — contact us to discuss your specific situation and we'll help point you in the right direction.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">What is green waste disposal and how do you handle it?</summary>
+            <div class="faq-answer"><p>Green waste includes plant material such as grass, leaves, branches, and landscaping trimmings. We haul all green waste to approved disposal and composting facilities in San Diego County, keeping it out of the landfill whenever possible.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="contact" aria-label="Get a Yard Waste Quote">
       <div class="container">
         <div class="contact-inner">
@@ -250,7 +352,7 @@
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
@@ -324,7 +426,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>

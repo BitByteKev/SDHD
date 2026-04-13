@@ -28,7 +28,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sdhaulinganddemo.com/commercial-junk-removal/" />
   <meta property="og:image" content="https://sdhaulinganddemo.com/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Commercial Junk Removal &amp; Office Cleanouts — San Diego Hauling &amp; Demo" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="San Diego Hauling &amp; Demo" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Commercial Junk Removal San Diego" />
@@ -48,16 +51,82 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://sdhaulinganddemo.com/commercial-junk-removal/#service",
       "name": "Commercial Junk Removal & Office Cleanouts",
       "description": "Professional commercial junk removal and office cleanout services in San Diego. Business moves, retail fixture removal, equipment disposal, and commercial property cleanups.",
+      "category": "Commercial Junk Removal",
       "provider": {
         "@type": "LocalBusiness",
+        "@id": "https://sdhaulinganddemo.com/#business",
         "name": "San Diego Hauling & Demo",
         "telephone": "+16198414193",
         "url": "https://sdhaulinganddemo.com"
       },
-      "areaServed": "San Diego County, CA",
-      "url": "https://sdhaulinganddemo.com/commercial-junk-removal/"
+      "areaServed": {"@type": "AdministrativeArea", "name": "San Diego County, CA"},
+      "url": "https://sdhaulinganddemo.com/commercial-junk-removal/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Commercial Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Office Furniture Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Office Cleanout"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Retail Fixture Removal"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Equipment Disposal"}}
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you offer commercial junk removal in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We provide full commercial junk removal services throughout San Diego County, including office cleanouts, retail fixture removal, equipment disposal, and large-scale commercial property cleanouts. We serve businesses of all sizes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you remove office furniture in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We remove all types of office furniture including desks, chairs, cubicle systems, filing cabinets, conference room tables, bookshelves, and more. We handle the heavy lifting and logistics so your business can keep running."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work outside of regular business hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we can accommodate early morning, evening, or weekend scheduling for commercial customers who need minimal disruption to operations. Contact us at (619) 841-4193 to arrange a time that works for your business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does commercial junk removal cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commercial junk removal pricing is based on volume, weight, and the type of materials involved. We provide free on-site or photo-based quotes for all commercial projects. Most office cleanouts range from $300 to $1,500+ depending on scale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle large commercial cleanouts in San Diego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We have the crew and equipment to handle large-scale commercial cleanouts including entire office buildings, warehouses, retail spaces, and multi-unit properties. Contact us to discuss your project and get a free quote."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -207,6 +276,39 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2>Commercial Junk Removal FAQs</h2>
+          <p>Common questions about our commercial junk removal and office cleanout service.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Do you offer commercial junk removal in San Diego?</summary>
+            <div class="faq-answer"><p>Yes. We provide full commercial junk removal services throughout San Diego County, including office cleanouts, retail fixture removal, equipment disposal, and large-scale commercial property cleanouts. We serve businesses of all sizes.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you remove office furniture in San Diego?</summary>
+            <div class="faq-answer"><p>Absolutely. We remove all types of office furniture including desks, chairs, cubicle systems, filing cabinets, conference room tables, bookshelves, and more. We handle the heavy lifting and logistics so your business can keep running.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you work outside of regular business hours?</summary>
+            <div class="faq-answer"><p>Yes, we can accommodate early morning, evening, or weekend scheduling for commercial customers who need minimal disruption to operations. Contact us at <a href="sms:+16198414193">(619) 841-4193</a> to arrange a time that works for your business.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much does commercial junk removal cost?</summary>
+            <div class="faq-answer"><p>Commercial junk removal pricing is based on volume, weight, and the type of materials involved. We provide free on-site or photo-based quotes for all commercial projects. Most office cleanouts range from $300 to $1,500+ depending on scale.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you handle large commercial cleanouts in San Diego?</summary>
+            <div class="faq-answer"><p>Yes. We have the crew and equipment to handle large-scale commercial cleanouts including entire office buildings, warehouses, retail spaces, and multi-unit properties. Contact us to discuss your project and get a free quote.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="contact" aria-label="Get a Commercial Quote">
       <div class="container">
         <div class="contact-inner">
@@ -250,7 +352,7 @@
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92101" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
@@ -324,7 +426,7 @@
         <h4>Contact Us</h4>
         <p><a href="tel:+16198414193">(619) 841-4193</a></p>
         <p><a href="mailto:contact@sdhaulinganddemo.com">contact@sdhaulinganddemo.com</a></p>
-        <p>San Diego, CA 92101</p>
+        <p>San Diego, CA 92115</p>
         <p class="footer-hours">Mon–Sat 8am–7pm<br>Sun: Closed</p>
       </div>
     </div>
