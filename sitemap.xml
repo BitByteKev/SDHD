@@ -65,4 +65,25 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://sdhaulinganddemo.com/blog/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sdhaulinganddemo.com/blog/how-much-does-junk-removal-cost-san-diego/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sdhaulinganddemo.com/blog/what-can-junk-removal-companies-take/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
