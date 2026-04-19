@@ -20,27 +20,33 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
+function setMenu(open) {
+  hamburger.classList.toggle('active', open);
+  navLinks.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  setMenu(!navLinks.classList.contains('open'));
 });
 
 // Close menu when a nav link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', () => setMenu(false));
 });
 
 // Close menu on outside click
 document.addEventListener('click', (e) => {
   if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+    setMenu(false);
+  }
+});
+
+// Close menu with Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    setMenu(false);
   }
 });
 
@@ -156,7 +162,15 @@ const validators = {
 function showError(fieldId, message) {
   const field = document.getElementById(fieldId);
   const error = document.getElementById(fieldId + 'Error');
-  if (field) field.classList.toggle('error', !!message);
+  if (field) {
+    field.classList.toggle('error', !!message);
+    field.setAttribute('aria-invalid', !!message ? 'true' : 'false');
+    if (error) {
+      error.setAttribute('role', 'alert');
+      error.setAttribute('aria-live', 'polite');
+      field.setAttribute('aria-describedby', fieldId + 'Error');
+    }
+  }
   if (error) error.textContent = message;
 }
 
@@ -466,7 +480,3 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(section => sectionObserver.observe(section));
 
-// Add active nav link style
-const style = document.createElement('style');
-style.textContent = `.nav-links a.active { color: var(--color-primary) !important; }`;
-document.head.appendChild(style);

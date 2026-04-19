@@ -8,19 +8,18 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PGB5HSF');</script>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5MX8PLLG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7CZWNVKXW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'GT-5MX8PLLG');
     gtag('config', 'G-K7CZWNVKXW');
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Furniture &amp; appliance removal in San Diego. We haul sofas, mattresses, refrigerators, washers, TVs &amp; more. Same-day service available. Get a free quote today!" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#7F00FF" />
+  <meta name="theme-color" content="#6200E0" />
   <meta name="keywords" content="furniture removal San Diego, appliance removal San Diego, sofa removal San Diego, couch removal San Diego, mattress disposal San Diego, mattress removal San Diego, refrigerator removal San Diego, washer dryer removal San Diego, TV disposal San Diego, large item removal San Diego, bulky item pickup San Diego, same day furniture removal San Diego, junk removal San Diego, San Diego junk removal services, haul away furniture San Diego, SD hauling and demo" />
   <link rel="canonical" href="https://sdhaulinganddemo.com/furniture-removal/" />
   <!-- Open Graph -->
@@ -167,7 +166,7 @@
   <link rel="apple-touch-icon" href="../logo.png" />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -179,7 +178,7 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="/" class="logo">
-        <img src="../logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img" />
+        <img src="../logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img" loading="eager" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="/#services">Services</a>
@@ -187,7 +186,7 @@
         <a href="/reviews/">Reviews</a>
         <a href="#contact" class="nav-cta">Get Free Quote</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -372,30 +371,30 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="John Smith" required />
+                <input type="text" id="name" name="name" placeholder="John Smith" required aria-required="true" />
                 <span class="form-error" id="nameError"></span>
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" placeholder="(619) 841-4193" required />
+                <input type="tel" id="phone" name="phone" placeholder="(619) 841-4193" required aria-required="true" />
                 <span class="form-error" id="phoneError"></span>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="john@email.com" required />
+                <input type="email" id="email" name="email" placeholder="john@email.com" required aria-required="true" />
                 <span class="form-error" id="emailError"></span>
               </div>
               <div class="form-group">
                 <label for="zip">Zip Code *</label>
-                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
+                <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required aria-required="true" />
                 <span class="form-error" id="zipError"></span>
               </div>
             </div>
             <div class="form-group">
               <label for="service">Type of Junk *</label>
-              <select id="service" name="service" required>
+              <select id="service" name="service" required aria-required="true">
                 <option value="furniture" selected>Furniture &amp; Appliances</option>
                 <option value="construction">Construction Debris</option>
                 <option value="cleanout">Whole-Home / Estate Cleanout</option>
@@ -430,7 +429,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="/" class="logo logo-light">
-          <img src="../logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" />
+          <img src="../logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" loading="lazy" decoding="async" />
         </a>
         <p>San Diego's most trusted hauling &amp; demolition service. Fast, affordable, and clean disposal.</p>
         <div class="footer-social">
@@ -483,6 +482,6 @@
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
 
-  <script src="../script.js" defer></script>
+  <script src="../script.min.js" defer></script>
 </body>
 </html>

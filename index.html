@@ -9,13 +9,12 @@
   })(window,document,'script','dataLayer','GTM-PGB5HSF');</script>
   <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5MX8PLLG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K7CZWNVKXW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'GT-5MX8PLLG');
     gtag('config', 'G-K7CZWNVKXW');
   </script>
   <meta charset="UTF-8" />
@@ -26,7 +25,7 @@
   <meta name="author" content="San Diego Hauling &amp; Demo" />
   <meta name="geo.region" content="US-CA" />
   <meta name="geo.placename" content="San Diego" />
-  <meta name="theme-color" content="#7F00FF" />
+  <meta name="theme-color" content="#6200E0" />
   <link rel="canonical" href="https://sdhaulinganddemo.com/" />
   <!-- Open Graph -->
   <meta property="og:title" content="San Diego Hauling &amp; Demo | Junk Removal Services" />
@@ -268,7 +267,7 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
   <link rel="apple-touch-icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -284,7 +283,7 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#home" class="logo">
-        <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img" />
+        <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img" loading="eager" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
@@ -293,7 +292,7 @@
         <a href="/blog/">Blog</a>
         <a href="#contact" class="nav-cta">Get Free Quote</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -520,17 +519,17 @@
         <div class="gallery-item" onclick="openLightbox('IMG_1273.jpeg', 'San Diego Hauling &amp; Demo — Our Fleet, San Diego County')">
           <picture>
             <source srcset="IMG_1273.webp" type="image/webp" />
-            <img src="IMG_1273.jpeg" alt="SD Hauling and Demo truck side view" loading="lazy" width="1920" height="2560" />
+            <img src="IMG_1273.jpeg" alt="SD Hauling and Demo truck side view" loading="lazy" decoding="async" width="1200" height="1600" />
           </picture>
           <div class="gallery-overlay">
             <span class="gallery-zoom">&#128269;</span>
             <p>Our Fleet — San Diego County</p>
           </div>
         </div>
-        <div class="gallery-item" onclick="openLightbox('San Diego Hauling &amp; Demo truck on street.png', 'San Diego Hauling &amp; Demo — Junk Removal · Demolition · Maintenance · Graffiti Removal')">
+        <div class="gallery-item" onclick="openLightbox('truck-on-street.jpg', 'San Diego Hauling &amp; Demo — Junk Removal · Demolition · Maintenance · Graffiti Removal')">
           <picture>
             <source srcset="truck-on-street.webp" type="image/webp" />
-            <img src="San Diego Hauling &amp; Demo truck on street.png" alt="SD Hauling and Demo truck rear wrap with services listed" loading="lazy" width="1024" height="1536" />
+            <img src="truck-on-street.jpg" alt="SD Hauling and Demo truck rear wrap with services listed" loading="lazy" decoding="async" width="683" height="1024" />
           </picture>
           <div class="gallery-overlay">
             <span class="gallery-zoom">&#128269;</span>
@@ -551,7 +550,7 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
     <div class="lightbox-inner" onclick="event.stopPropagation()">
-      <img src="" alt="" id="lightboxImg" />
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" id="lightboxImg" loading="lazy" decoding="async" />
       <p id="lightboxCaption"></p>
     </div>
   </div>
@@ -607,7 +606,7 @@
         </div>
         <div class="service-area-map">
           <div class="map-placeholder">
-            <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="map-logo" />
+            <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="map-logo" loading="lazy" decoding="async" />
             <p>San Diego County</p>
             <span>We service all zip codes</span>
           </div>
@@ -727,30 +726,30 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required />
+              <input type="text" id="name" name="name" placeholder="John Smith" required aria-required="true" />
               <span class="form-error" id="nameError"></span>
             </div>
             <div class="form-group">
               <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="(619) 841-4193" required />
+              <input type="tel" id="phone" name="phone" placeholder="(619) 841-4193" required aria-required="true" />
               <span class="form-error" id="phoneError"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@email.com" required />
+              <input type="email" id="email" name="email" placeholder="john@email.com" required aria-required="true" />
               <span class="form-error" id="emailError"></span>
             </div>
             <div class="form-group">
               <label for="zip">Zip Code *</label>
-              <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required />
+              <input type="text" id="zip" name="zip" placeholder="92115" maxlength="5" required aria-required="true" />
               <span class="form-error" id="zipError"></span>
             </div>
           </div>
           <div class="form-group">
             <label for="service">Type of Junk *</label>
-            <select id="service" name="service" required>
+            <select id="service" name="service" required aria-required="true">
               <option value="" disabled selected>Select what you need removed...</option>
               <option value="furniture">Furniture &amp; Appliances</option>
               <option value="construction">Construction Debris</option>
@@ -824,7 +823,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#home" class="logo logo-light">
-          <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" />
+          <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" loading="lazy" decoding="async" />
         </a>
         <p>San Diego's most trusted hauling &amp; demolition service. Fast, affordable, and clean disposal since 2000.</p>
         <div class="footer-social">
@@ -887,7 +886,7 @@
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
 
-  <script src="script.js" defer></script>
+  <script src="script.min.js" defer></script>
   <script type="text/javascript" src="https://grwapi.net/widget.min.js" async></script>
 </body>
 </html>
