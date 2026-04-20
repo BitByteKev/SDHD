@@ -1906,6 +1906,7 @@ a.service-card:hover {
     border-top: var(--lime-border);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    z-index: 1001;
   }
 
   .nav-links.open { transform: translateX(0); }
