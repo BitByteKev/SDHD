@@ -370,6 +370,10 @@ if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
     }
 
     formSuccess.classList.remove('hidden');
+    trackEvent('quote_form_submit', {
+      event_category: 'lead',
+      event_label: document.getElementById('service')?.value || '',
+    });
 
   } catch (err) {
     submitBtn.disabled = false;
@@ -479,4 +483,49 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(section => sectionObserver.observe(section));
+
+
+// ---- Google Analytics / GTM Event Tracking ----
+function trackEvent(eventName, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, params);
+  }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(Object.assign({ event: eventName }, params));
+}
+
+// Phone call clicks
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="tel:"]');
+  if (link) {
+    trackEvent('phone_call', {
+      event_category: 'contact',
+      event_label: link.href.replace('tel:', ''),
+    });
+  }
+});
+
+// SMS clicks
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="sms:"]');
+  if (link) {
+    trackEvent('sms_click', {
+      event_category: 'contact',
+      event_label: link.href.replace('sms:', ''),
+    });
+  }
+});
+
+// Get Quote button / CTA clicks
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest(
+    'a[href*="contact"], a[href*="#quote"], .floating-btn--quote, .nav-cta'
+  );
+  if (btn && !btn.href?.startsWith('tel:') && !btn.href?.startsWith('sms:')) {
+    trackEvent('get_quote_click', {
+      event_category: 'lead',
+      event_label: btn.textContent.trim().slice(0, 50),
+    });
+  }
+});
 
