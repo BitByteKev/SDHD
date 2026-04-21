@@ -1139,7 +1139,7 @@ a.service-card:hover {
   gap: 8px;
 }
 
-.area-tags span {
+.area-tags a {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   color: var(--color-text);
@@ -1150,10 +1150,12 @@ a.service-card:hover {
   font-weight: 600;
   letter-spacing: .03em;
   transition: all var(--transition);
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.area-tags span:hover {
+.area-tags a:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-secondary);
@@ -1854,10 +1856,10 @@ a.service-card:hover {
 }
 
 /* Area tags: 3D pop */
-.area-tags span {
+.area-tags a {
   transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
-.area-tags span:hover {
+.area-tags a:hover {
   transform: translateY(-4px) scale(1.1);
   box-shadow: 0 8px 20px rgba(127,0,255,.3);
   background: var(--color-primary) !important;
