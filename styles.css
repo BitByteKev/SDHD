@@ -2355,3 +2355,30 @@ a.service-card:hover {
   .blog-author { text-align: left; }
   .blog-price-table th, .blog-price-table td { padding: 8px 10px; font-size: .875rem; }
 }
+
+/* ---- Language switcher ---- */
+.nav-lang {
+  font-size: .72rem !important;
+  padding: 5px 13px !important;
+  border: 1px solid rgba(255,255,255,.3) !important;
+  border-radius: 20px !important;
+  opacity: .75;
+  text-transform: uppercase !important;
+  letter-spacing: .08em;
+}
+.nav-lang:hover {
+  opacity: 1 !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent) !important;
+}
+@media (max-width: 768px) {
+  .nav-lang {
+    border-width: 0 0 1px !important;
+    border-radius: 0 !important;
+    padding: 16px 0 !important;
+    opacity: .8;
+    font-size: 1.05rem !important;
+    min-height: 52px;
+    letter-spacing: .06em;
+  }
+}
