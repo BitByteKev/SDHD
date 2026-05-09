@@ -529,3 +529,133 @@ document.addEventListener('click', (e) => {
   }
 });
 
+
+
+// ---- Floating draggable Call button ----
+(function () {
+  const PHONE = '+16198414193';
+  const STORAGE_KEY = 'callFabPos';
+  const DRAG_THRESHOLD = 6; // pixels before a press becomes a drag
+
+  function init() {
+    if (document.querySelector('.call-fab')) return;
+
+    const btn = document.createElement('a');
+    btn.href = 'tel:' + PHONE;
+    btn.className = 'call-fab';
+    btn.setAttribute('role', 'button');
+    btn.setAttribute('aria-label', 'Call San Diego Hauling & Demo');
+    btn.title = 'Call us — drag to move';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>';
+    document.body.appendChild(btn);
+
+    // Restore saved position (clamped to current viewport)
+    applySavedPosition(btn);
+    window.addEventListener('resize', () => applySavedPosition(btn), { passive: true });
+
+    let startX = 0, startY = 0;
+    let originLeft = 0, originTop = 0;
+    let pointerId = null;
+    let dragging = false;
+    let moved = false;
+
+    btn.addEventListener('pointerdown', (e) => {
+      // Ignore right/middle clicks
+      if (e.button !== undefined && e.button !== 0) return;
+      pointerId = e.pointerId;
+      moved = false;
+      dragging = false;
+      const rect = btn.getBoundingClientRect();
+      // Switch to top/left positioning so we can move freely
+      btn.style.right = 'auto';
+      btn.style.bottom = 'auto';
+      btn.style.left = rect.left + 'px';
+      btn.style.top = rect.top + 'px';
+      originLeft = rect.left;
+      originTop = rect.top;
+      startX = e.clientX;
+      startY = e.clientY;
+      btn.setPointerCapture(pointerId);
+    });
+
+    btn.addEventListener('pointermove', (e) => {
+      if (pointerId === null || e.pointerId !== pointerId) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (!dragging && Math.hypot(dx, dy) > DRAG_THRESHOLD) {
+        dragging = true;
+        moved = true;
+        btn.classList.add('dragging');
+      }
+      if (dragging) {
+        e.preventDefault();
+        const w = btn.offsetWidth;
+        const h = btn.offsetHeight;
+        const maxLeft = window.innerWidth - w - 4;
+        const maxTop = window.innerHeight - h - 4;
+        const left = Math.min(Math.max(originLeft + dx, 4), maxLeft);
+        const top = Math.min(Math.max(originTop + dy, 4), maxTop);
+        btn.style.left = left + 'px';
+        btn.style.top = top + 'px';
+      }
+    });
+
+    function endDrag(e) {
+      if (pointerId === null || (e && e.pointerId !== pointerId)) return;
+      try { btn.releasePointerCapture(pointerId); } catch (_) {}
+      pointerId = null;
+      if (dragging) {
+        btn.classList.remove('dragging');
+        savePosition(btn);
+      }
+      dragging = false;
+    }
+
+    btn.addEventListener('pointerup', endDrag);
+    btn.addEventListener('pointercancel', endDrag);
+
+    // Suppress the click (navigation to tel:) if the user was dragging
+    btn.addEventListener('click', (e) => {
+      if (moved) {
+        e.preventDefault();
+        e.stopPropagation();
+        moved = false;
+      }
+    });
+
+    // Prevent the iOS context menu / image-save on long press
+    btn.addEventListener('contextmenu', (e) => e.preventDefault());
+  }
+
+  function savePosition(btn) {
+    try {
+      const rect = btn.getBoundingClientRect();
+      // Store as fractions of viewport so it survives resizes/orientation changes
+      const data = {
+        xRatio: rect.left / window.innerWidth,
+        yRatio: rect.top / window.innerHeight,
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch (_) {}
+  }
+
+  function applySavedPosition(btn) {
+    let data = null;
+    try { data = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (_) {}
+    if (!data || typeof data.xRatio !== 'number' || typeof data.yRatio !== 'number') return;
+    const w = btn.offsetWidth || 60;
+    const h = btn.offsetHeight || 60;
+    const left = Math.min(Math.max(data.xRatio * window.innerWidth, 4), window.innerWidth - w - 4);
+    const top = Math.min(Math.max(data.yRatio * window.innerHeight, 4), window.innerHeight - h - 4);
+    btn.style.right = 'auto';
+    btn.style.bottom = 'auto';
+    btn.style.left = left + 'px';
+    btn.style.top = top + 'px';
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
