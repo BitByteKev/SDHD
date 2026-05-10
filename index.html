@@ -842,6 +842,27 @@
           <span class="section-label">Get Started</span>
           <h2>Request Your Free Quote</h2>
           <p>Fill out the form and we'll get back to you within 24 hours. Or call us now for immediate assistance.</p>
+          <div class="price-callout" aria-label="Typical pricing">
+            <div class="price-callout-header">
+              <span class="price-callout-eyebrow">Typical Pricing</span>
+              <span class="price-callout-badge">No Hidden Fees</span>
+            </div>
+            <ul class="price-callout-tiers">
+              <li>
+                <span class="price-callout-label">Single items</span>
+                <span class="price-callout-value">from <strong>$99</strong></span>
+              </li>
+              <li>
+                <span class="price-callout-label">Half truck</span>
+                <span class="price-callout-value">~ <strong>$300</strong></span>
+              </li>
+              <li>
+                <span class="price-callout-label">Full truck</span>
+                <span class="price-callout-value">up to <strong>$600</strong></span>
+              </li>
+            </ul>
+            <p class="price-callout-note">Final price set during your free on-site assessment. No obligation, no pressure.</p>
+          </div>
           <div class="contact-details">
             <div class="contact-item">
               <div class="contact-icon">&#128172;</div>
@@ -950,10 +971,11 @@
             <span id="btnLoading" class="hidden">Sending...</span>
           </button>
           <p class="form-disclaimer">No credit card required. We'll contact you within 24 hours.</p>
-          <div class="form-success hidden" id="formSuccess">
+          <div class="form-success hidden" id="formSuccess" role="status" aria-live="polite" tabindex="-1">
             <div class="success-icon">&#10003;</div>
             <h3>Quote Request Sent!</h3>
-            <p>We'll contact you within 24 hours. Check your email for confirmation.</p>
+            <p>We've received your request. We'll text or call you within 24 hours at the number you provided.</p>
+            <p class="form-success-meta">Need an immediate response? <a href="tel:+16198414193">Call (619) 841-4193</a></p>
           </div>
         </form>
       </div>
@@ -1033,6 +1055,7 @@
     <a href="#contact" class="floating-btn floating-btn--quote">
       Get Quote
     </a>
+    <button type="button" class="floating-cta-close" id="floatingCtaClose" aria-label="Dismiss bottom bar">&times;</button>
   </div>
 
   <!-- Back to Top -->

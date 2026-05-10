@@ -101,27 +101,51 @@ animatableSelectors.forEach(selector => {
 });
 
 
-// ---- Floating CTA visibility (show after scrolling past hero) ----
+// ---- Floating CTA visibility ----
+// Hidden when: (a) hero in view, (b) contact section in view (form already there),
+// or (c) user has dismissed it this session.
 const floatingCta = document.getElementById('floatingCta');
+const floatingCtaClose = document.getElementById('floatingCtaClose');
 const hero = document.getElementById('home');
+const contactSection = document.getElementById('contact');
+const FLOATING_CTA_DISMISS_KEY = 'floatingCtaDismissed';
 
-const heroObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    // Hide floating CTA when hero is visible
-    if (entry.isIntersecting) {
-      floatingCta.style.transform = 'translateY(100%)';
-      floatingCta.style.opacity = '0';
-    } else {
-      floatingCta.style.transform = 'translateY(0)';
-      floatingCta.style.opacity = '1';
-    }
+let heroVisible = true;
+let contactVisible = false;
+let ctaDismissed = false;
+try { ctaDismissed = sessionStorage.getItem(FLOATING_CTA_DISMISS_KEY) === '1'; } catch (_) {}
+
+function updateFloatingCta() {
+  if (!floatingCta) return;
+  const shouldHide = ctaDismissed || heroVisible || contactVisible;
+  floatingCta.classList.toggle('floating-cta--hidden', shouldHide);
+}
+
+if (floatingCta && hero) {
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { heroVisible = entry.isIntersecting; });
+    updateFloatingCta();
+  }, { threshold: 0.3 });
+  heroObserver.observe(hero);
+}
+
+if (floatingCta && contactSection) {
+  const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { contactVisible = entry.isIntersecting; });
+    updateFloatingCta();
+  }, { threshold: 0.15 });
+  contactObserver.observe(contactSection);
+}
+
+if (floatingCtaClose) {
+  floatingCtaClose.addEventListener('click', () => {
+    ctaDismissed = true;
+    try { sessionStorage.setItem(FLOATING_CTA_DISMISS_KEY, '1'); } catch (_) {}
+    floatingCta.classList.add('floating-cta--dismissed');
   });
-}, { threshold: 0.3 });
+}
 
-floatingCta.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-floatingCta.style.transform = 'translateY(100%)';
-floatingCta.style.opacity = '0';
-heroObserver.observe(hero);
+updateFloatingCta();
 
 
 // ---- Quote form validation & submission ----
@@ -369,7 +393,16 @@ if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
       throw new Error(data.error || 'Submission failed');
     }
 
+    // Replace the form with the success state so it's unmissable
+    quoteForm.querySelectorAll(':scope > *:not(#formSuccess)').forEach(el => {
+      el.classList.add('hidden');
+    });
     formSuccess.classList.remove('hidden');
+    // Scroll the success message into view and move focus for screen readers
+    requestAnimationFrame(() => {
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      try { formSuccess.focus({ preventScroll: true }); } catch (_) {}
+    });
     trackEvent('quote_form_submit', {
       event_category: 'lead',
       event_label: document.getElementById('service')?.value || '',
