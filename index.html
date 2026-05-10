@@ -412,14 +412,12 @@
   </script>
   <title>San Diego Hauling &amp; Demo | Junk Removal Services</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
   <link rel="apple-touch-icon" href="logo.png" />
   <link rel="stylesheet" href="styles.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800;900&family=Heebo:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body>
 <!-- End Google Tag Manager (noscript) -->
@@ -428,7 +426,7 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#home" class="logo">
-        <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img" loading="eager" fetchpriority="high" decoding="async" />
+        <img src="logo.webp" alt="San Diego Hauling &amp; Demo" class="logo-img" width="240" height="160" loading="eager" fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
@@ -662,7 +660,7 @@
         <p style="color:rgba(255,255,255,.6)">Our trucks are fully wrapped, licensed, and on the road across San Diego County every day.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox('IMG_1273.jpeg', 'San Diego Hauling &amp; Demo — Our Fleet, San Diego County')">
+        <div class="gallery-item" onclick="openLightbox('IMG_1273.jpeg', 'San Diego Hauling &amp; Demo — Our Fleet, San Diego County')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('IMG_1273.jpeg','San Diego Hauling &amp; Demo — Our Fleet, San Diego County');}" role="button" tabindex="0" aria-label="View larger image: Our Fleet">
           <picture>
             <source srcset="IMG_1273.webp" type="image/webp" />
             <img src="IMG_1273.jpeg" alt="SD Hauling and Demo truck side view" loading="lazy" decoding="async" width="1200" height="1600" />
@@ -672,7 +670,7 @@
             <p>Our Fleet — San Diego County</p>
           </div>
         </div>
-        <div class="gallery-item" onclick="openLightbox('truck-on-street.jpg', 'San Diego Hauling &amp; Demo — Junk Removal · Demolition · Maintenance · Graffiti Removal')">
+        <div class="gallery-item" onclick="openLightbox('truck-on-street.jpg', 'San Diego Hauling &amp; Demo — Junk Removal · Demolition · Maintenance · Graffiti Removal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('truck-on-street.jpg','San Diego Hauling &amp; Demo — Junk Removal · Demolition · Maintenance · Graffiti Removal');}" role="button" tabindex="0" aria-label="View larger image: Full-Service Truck Wrap">
           <picture>
             <source srcset="truck-on-street.webp" type="image/webp" />
             <img src="truck-on-street.jpg" alt="SD Hauling and Demo truck rear wrap with services listed" loading="lazy" decoding="async" width="683" height="1024" />
@@ -693,8 +691,8 @@
   </section>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&#10005;</button>
     <div class="lightbox-inner" onclick="event.stopPropagation()">
       <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" id="lightboxImg" loading="lazy" decoding="async" />
       <p id="lightboxCaption"></p>
@@ -752,7 +750,7 @@
         </div>
         <div class="service-area-map">
           <div class="map-placeholder">
-            <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="map-logo" loading="lazy" decoding="async" />
+            <img src="logo.webp" alt="San Diego Hauling &amp; Demo" class="map-logo" width="240" height="160" loading="lazy" decoding="async" />
             <p>San Diego County</p>
             <span>We service all zip codes</span>
           </div>
@@ -969,14 +967,22 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#home" class="logo logo-light">
-          <img src="logo.png" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" loading="lazy" decoding="async" />
+          <img src="logo.webp" alt="San Diego Hauling &amp; Demo" class="logo-img logo-img--footer" width="240" height="160" loading="lazy" decoding="async" />
         </a>
         <p>San Diego's most trusted hauling &amp; demolition service. Fast, affordable, and clean disposal since 2000.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/sdhaulers" aria-label="Facebook" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/sdhaulinganddemo/" aria-label="Instagram" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.yelp.com/biz/san-diego-haulers-san-diego-2" aria-label="Yelp" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-yelp"></i></a>
-          <a href="http://google.com/localservices/review/sandiego619" aria-label="Google" class="social-link" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i></a>
+          <a href="https://www.facebook.com/sdhaulers" aria-label="Facebook" class="social-link" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/sdhaulinganddemo/" aria-label="Instagram" class="social-link" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+          <a href="https://www.yelp.com/biz/san-diego-haulers-san-diego-2" aria-label="Yelp" class="social-link" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1 -28.21-19.6 197.16 197.16 0 0 1 9-85.32 22.8 22.8 0 0 1 31.6-13.21zm44 239.25a199.45 199.45 0 0 0 79.42 32.11A22.78 22.78 0 0 0 192.94 490l3.9-110.82c.7-21.3-25.5-31.91-39.81-16.1l-74.21 82.4a22.82 22.82 0 0 0 5.09 34.09zm145.34-109.92l58.81 94a22.93 22.93 0 0 0 34 5.5 198.36 198.36 0 0 0 52.71-67.61A23 23 0 0 0 364.17 370l-105.42-34.26c-20.31-6.5-37.81 15.8-26.51 33.91zm148.33-132.23a197.44 197.44 0 0 0 -50.41-69.31 22.85 22.85 0 0 0 -34 4.4l-62 91.92c-11.9 17.7 4.7 40.61 25.2 34.71L366 268.63a23 23 0 0 0 14.61-31.21zM62.11 30.18a22.86 22.86 0 0 0 -9.9 32l104.12 180.44c11.7 20.21 42.61 11.9 42.61-11.4V22.88a22.67 22.67 0 0 0 -24.5-22.8 320.37 320.37 0 0 0 -112.33 30.1z"/></svg>
+          </a>
+          <a href="https://google.com/localservices/review/sandiego619" aria-label="Google" class="social-link" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 488 512" fill="currentColor" aria-hidden="true"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-links">
