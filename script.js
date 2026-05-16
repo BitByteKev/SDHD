@@ -723,3 +723,76 @@ document.addEventListener('click', (e) => {
     init();
   }
 })();
+
+/* ===== Before / After Drag Slider ===== */
+(function () {
+  function init() {
+    const slider = document.getElementById('baSlider');
+    if (!slider) return;
+    const handle = slider.querySelector('.ba-handle');
+    let dragging = false;
+    let rect = null;
+
+    function setPos(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      slider.style.setProperty('--ba-pos', pct + '%');
+      slider.setAttribute('aria-valuenow', Math.round(pct));
+    }
+
+    function pctFromClientX(clientX) {
+      if (!rect) rect = slider.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    function onDown(e) {
+      dragging = true;
+      rect = slider.getBoundingClientRect();
+      slider.focus({ preventScroll: true });
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      setPos(pctFromClientX(x));
+      if (e.cancelable) e.preventDefault();
+    }
+    function onMove(e) {
+      if (!dragging) return;
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      setPos(pctFromClientX(x));
+      if (e.cancelable && e.touches) e.preventDefault();
+    }
+    function onUp() {
+      dragging = false;
+      rect = null;
+    }
+
+    slider.addEventListener('mousedown', onDown);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+
+    slider.addEventListener('touchstart', onDown, { passive: false });
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onUp);
+    window.addEventListener('touchcancel', onUp);
+
+    if (handle) {
+      handle.addEventListener('click', function (e) { e.preventDefault(); });
+    }
+
+    slider.addEventListener('keydown', function (e) {
+      const cur = parseFloat(slider.getAttribute('aria-valuenow')) || 50;
+      const step = e.shiftKey ? 10 : 2;
+      if (e.key === 'ArrowLeft')  { setPos(cur - step); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { setPos(cur + step); e.preventDefault(); }
+      else if (e.key === 'Home') { setPos(0); e.preventDefault(); }
+      else if (e.key === 'End')  { setPos(100); e.preventDefault(); }
+    });
+
+    window.addEventListener('resize', function () { rect = null; });
+
+    setPos(50);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

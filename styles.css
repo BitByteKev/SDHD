@@ -2658,3 +2658,108 @@ a.service-card:hover {
     letter-spacing: .06em;
   }
 }
+
+/* ---- Before / After Drag Slider ---- */
+.ba-slider {
+  --ba-pos: 50%;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #000;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+  outline: none;
+}
+.ba-slider:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-primary-light), var(--shadow-lg);
+}
+.ba-img,
+.ba-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.ba-img { position: absolute; inset: 0; }
+.ba-after-wrap {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 0 var(--ba-pos));
+  -webkit-clip-path: inset(0 0 0 var(--ba-pos));
+  will-change: clip-path;
+}
+.ba-label {
+  position: absolute;
+  top: 16px;
+  padding: 6px 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 2;
+}
+.ba-label-before { left: 16px; }
+.ba-label-after {
+  right: 16px;
+  background: var(--color-primary);
+}
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--ba-pos);
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 12px rgba(0,0,0,.5);
+  z-index: 3;
+  will-change: left;
+}
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: grab;
+  pointer-events: auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  transition: transform var(--transition), background var(--transition);
+  padding: 0;
+}
+.ba-handle:hover { transform: scale(1.06); background: var(--color-bg-alt); }
+.ba-handle:active { cursor: grabbing; transform: scale(.96); }
+.ba-arrow { font-size: .85rem; line-height: 1; font-weight: 700; }
+
+@media (max-width: 600px) {
+  .ba-slider { aspect-ratio: 3 / 4; }
+  .ba-label { font-size: .7rem; padding: 5px 10px; top: 12px; }
+  .ba-label-before { left: 12px; }
+  .ba-label-after { right: 12px; }
+  .ba-handle { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+}
