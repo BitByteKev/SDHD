@@ -223,9 +223,9 @@ h1, h2, h3, h4 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(20,20,20,.97);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  transition: box-shadow var(--transition);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition), border-bottom-color var(--transition), box-shadow var(--transition);
 }
 
 /* backdrop-filter on a pseudo-element avoids making navbar a containing block
@@ -234,15 +234,24 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   pointer-events: none;
   z-index: -1;
+  transition: backdrop-filter var(--transition), -webkit-backdrop-filter var(--transition);
 }
 
-.navbar.scrolled {
-  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+.navbar.scrolled,
+.navbar:has(.nav-links.open) {
+  background: rgba(20,20,20,.97);
   border-bottom-color: var(--color-accent);
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+
+.navbar.scrolled::before,
+.navbar:has(.nav-links.open)::before {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-inner {
@@ -360,9 +369,17 @@ h1, h2, h3, h4 {
 
 .hero-bg {
   position: absolute;
-  inset: 0;
-  background: #0d0d0d;
+  inset: -25% 0;
+  background-color: #0d0d0d;
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,.55) 0%, rgba(13,13,13,.78) 100%),
+    url('IMG_1273.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   z-index: 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .hero-bg::before {
@@ -370,15 +387,21 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 15% 60%, rgba(127,0,255,.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 30%, rgba(117,255,51,.1) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 60%, rgba(127,0,255,.28) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(117,255,51,.14) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.6) 100%);
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.7) 100%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg { will-change: auto; transform: none !important; }
 }
 
 .hero-content {

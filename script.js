@@ -16,6 +16,37 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
+// ---- Hero parallax ----
+// Translate the hero background slower than the foreground scroll for a
+// classic parallax effect. Skips when the user prefers reduced motion.
+(function () {
+  const heroBg = document.querySelector('.hero-bg');
+  const heroEl = document.getElementById('home');
+  if (!heroBg || !heroEl) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const SPEED = 0.25;
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const y = window.scrollY;
+    // Skip work once the hero is well out of view.
+    if (y > heroEl.offsetHeight + 200) return;
+    heroBg.style.transform = 'translate3d(0,' + (y * SPEED) + 'px,0)';
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
+})();
+
+
 // ---- Mobile hamburger menu ----
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
