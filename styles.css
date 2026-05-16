@@ -371,15 +371,43 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: -25% 0;
   background-color: #0d0d0d;
-  background-image:
-    linear-gradient(180deg, rgba(13,13,13,.55) 0%, rgba(13,13,13,.78) 100%),
-    url('IMG_1273.webp');
+  z-index: 0;
+  overflow: hidden;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  transform-origin: center center;
+  opacity: 0;
+  animation: heroSlide 14s ease-in-out infinite;
   z-index: 0;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
+}
+
+.hero-bg-image--1 {
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,.55) 0%, rgba(13,13,13,.78) 100%),
+    url('truck.JPG');
+  animation-delay: 0s;
+}
+
+.hero-bg-image--2 {
+  background-image:
+    linear-gradient(180deg, rgba(13,13,13,.55) 0%, rgba(13,13,13,.78) 100%),
+    url('IMG_1273.webp');
+  animation-delay: -7s;
+}
+
+@keyframes heroSlide {
+  0%, 100% { opacity: 0; transform: scale(1.32); }
+  3%       { opacity: 1; transform: scale(1.28); }
+  43%      { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0; transform: scale(1); }
 }
 
 .hero-bg::before {
@@ -390,6 +418,7 @@ h1, h2, h3, h4 {
     radial-gradient(ellipse at 15% 60%, rgba(127,0,255,.28) 0%, transparent 55%),
     radial-gradient(ellipse at 85% 30%, rgba(117,255,51,.14) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-bg::after {
@@ -398,10 +427,13 @@ h1, h2, h3, h4 {
   inset: 0;
   background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.7) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-bg { will-change: auto; transform: none !important; }
+  .hero-bg-image { animation: none; transform: none; opacity: 0; }
+  .hero-bg-image--1 { opacity: 1; }
 }
 
 .hero-content {
