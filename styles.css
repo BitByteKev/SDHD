@@ -2665,7 +2665,7 @@ a.service-card:hover {
 .ba-slider {
   --ba-pos: 50%;
   position: relative;
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-lg);
