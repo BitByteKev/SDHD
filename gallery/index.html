@@ -78,6 +78,12 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
   <style>
+    .hero{min-height:auto;padding:140px 0 60px;}
+    .hero-content h1{font-size:clamp(1.9rem,4.5vw,3rem);}
+    .hero-sub{font-size:clamp(.95rem,1.6vw,1.1rem);margin-top:.75rem;}
+    @media (max-width:600px){
+      .hero{padding:110px 0 44px;}
+    }
     .fleet-slideshow{position:relative;max-width:900px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;background:#0a0a0a;border-bottom:var(--lime-border);box-shadow:0 24px 60px rgba(0,0,0,.35);}
     .fleet-slides{position:relative;width:100%;aspect-ratio:4/3;}
     .fleet-slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none;}
