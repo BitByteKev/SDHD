@@ -77,6 +77,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    .fleet-slideshow{position:relative;max-width:900px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;background:#0a0a0a;border-bottom:var(--lime-border);box-shadow:0 24px 60px rgba(0,0,0,.35);}
+    .fleet-slides{position:relative;width:100%;aspect-ratio:4/3;}
+    .fleet-slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none;}
+    .fleet-slide.is-active{opacity:1;pointer-events:auto;}
+    .fleet-slide picture,.fleet-slide img{width:100%;height:100%;display:block;object-fit:cover;}
+    .fleet-caption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff;font-family:var(--font-heading);font-weight:600;font-size:.95rem;letter-spacing:.03em;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0));}
+    .fleet-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.55);color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition),border-color var(--transition);z-index:2;}
+    .fleet-nav:hover{background:rgba(0,0,0,.85);border-color:var(--color-accent);}
+    .fleet-prev{left:14px;}
+    .fleet-next{right:14px;}
+    .fleet-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:8px;z-index:2;}
+    .fleet-dot{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.45);cursor:pointer;padding:0;transition:background var(--transition),transform var(--transition);}
+    .fleet-dot.is-active{background:var(--color-accent);transform:scale(1.25);}
+    @media (max-width:600px){
+      .fleet-slides{aspect-ratio:3/4;}
+      .fleet-nav{width:38px;height:38px;}
+    }
+  </style>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGB5HSF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -141,6 +160,41 @@
               <span class="ba-arrow ba-arrow-left">&#10094;</span>
               <span class="ba-arrow ba-arrow-right">&#10095;</span>
             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Slideshow -->
+    <section class="section" id="fleet" aria-label="Our Fleet">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Fleet</span>
+          <h2>Professional. Branded. Ready to Haul.</h2>
+          <p>Our trucks are fully wrapped, licensed, and on the road across San Diego County every day.</p>
+        </div>
+        <div class="fleet-slideshow" id="fleetSlideshow" aria-roledescription="carousel" aria-label="Fleet photo slideshow">
+          <div class="fleet-slides">
+            <div class="fleet-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2">
+              <picture>
+                <source srcset="../IMG_1273.webp" type="image/webp" />
+                <img src="../IMG_1273.jpeg" alt="SD Hauling and Demo truck side view" loading="eager" decoding="async" width="1200" height="1600" />
+              </picture>
+              <div class="fleet-caption">Our Fleet — San Diego County</div>
+            </div>
+            <div class="fleet-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+              <picture>
+                <source srcset="../truck-on-street.webp" type="image/webp" />
+                <img src="../truck-on-street.jpg" alt="SD Hauling and Demo truck rear wrap with services listed" loading="lazy" decoding="async" width="683" height="1024" />
+              </picture>
+              <div class="fleet-caption">Full-Service Truck Wrap</div>
+            </div>
+          </div>
+          <button class="fleet-nav fleet-prev" type="button" aria-label="Previous slide">&#10094;</button>
+          <button class="fleet-nav fleet-next" type="button" aria-label="Next slide">&#10095;</button>
+          <div class="fleet-dots" role="tablist" aria-label="Slide selector">
+            <button class="fleet-dot is-active" type="button" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="fleet-dot" type="button" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
           </div>
         </div>
       </div>
@@ -226,5 +280,33 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
 
   <script src="../script.min.js" defer></script>
+  <script>
+    (function(){
+      var root=document.getElementById('fleetSlideshow');
+      if(!root)return;
+      var slides=root.querySelectorAll('.fleet-slide');
+      var dots=root.querySelectorAll('.fleet-dot');
+      var prev=root.querySelector('.fleet-prev');
+      var next=root.querySelector('.fleet-next');
+      var i=0,timer,delay=6000;
+      function show(n){
+        i=(n+slides.length)%slides.length;
+        slides.forEach(function(s,k){s.classList.toggle('is-active',k===i);});
+        dots.forEach(function(d,k){d.classList.toggle('is-active',k===i);d.setAttribute('aria-selected',k===i?'true':'false');});
+      }
+      function start(){stop();timer=setInterval(function(){show(i+1);},delay);}
+      function stop(){if(timer){clearInterval(timer);timer=null;}}
+      prev.addEventListener('click',function(){show(i-1);start();});
+      next.addEventListener('click',function(){show(i+1);start();});
+      dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);start();});});
+      root.addEventListener('mouseenter',stop);
+      root.addEventListener('mouseleave',start);
+      root.addEventListener('keydown',function(e){
+        if(e.key==='ArrowLeft'){show(i-1);start();}
+        else if(e.key==='ArrowRight'){show(i+1);start();}
+      });
+      start();
+    })();
+  </script>
 </body>
 </html>
