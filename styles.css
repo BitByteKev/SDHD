@@ -242,14 +242,16 @@ h1, h2, h3, h4 {
 }
 
 .navbar.scrolled,
-.navbar:has(.nav-links.open) {
+.navbar:has(.nav-links.open),
+body:has(.blog-post-wrap) .navbar {
   background: rgba(20,20,20,.97);
   border-bottom-color: var(--color-accent);
   box-shadow: 0 2px 20px rgba(0,0,0,.4);
 }
 
 .navbar.scrolled::before,
-.navbar:has(.nav-links.open)::before {
+.navbar:has(.nav-links.open)::before,
+body:has(.blog-post-wrap) .navbar::before {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -277,7 +279,7 @@ h1, h2, h3, h4 {
 .logo-accent { color: var(--color-accent); }
 
 .logo-img {
-  height: 48px;
+  height: 60px;
   width: auto;
   border-radius: 6px;
   display: block;
@@ -2294,7 +2296,7 @@ a.service-card:hover {
   .section-header p { font-size: .92rem; }
 
   /* Logo smaller on phones */
-  .logo-img { height: 40px; }
+  .logo-img { height: 48px; }
 
   /* Services — single column on phones */
   .services-grid { grid-template-columns: 1fr; }
