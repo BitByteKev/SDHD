@@ -1735,7 +1735,7 @@ a.service-card:hover {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
   gap: 36px;
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,.08);

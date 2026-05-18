@@ -302,19 +302,139 @@
     }
 }
   </script>
-  <!-- Schema.org: WebSite -->
+  <!-- Schema.org: WebSite (with Sitelinks SearchBox) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://sdhaulinganddemo.com/#website",
-    "url": "https://sdhaulinganddemo.com",
+    "url": "https://sdhaulinganddemo.com/",
     "name": "San Diego Hauling & Demo",
+    "alternateName": ["SD Hauling & Demo", "San Diego Haulers"],
     "description": "Fast, affordable junk removal and demolition services in San Diego County.",
     "publisher": {
         "@id": "https://sdhaulinganddemo.com/#business"
     },
-    "inLanguage": "en-US"
+    "inLanguage": "en-US",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://sdhaulinganddemo.com/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+  </script>
+  <!-- Schema.org: SiteNavigationElement (helps sitelinks selection) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sdhaulinganddemo.com/#sitenav",
+    "name": "San Diego Hauling & Demo — Main Navigation",
+    "itemListElement": [
+        {
+            "@type": "SiteNavigationElement",
+            "position": 1,
+            "name": "Junk Removal Services",
+            "description": "Full-service junk removal across San Diego County.",
+            "url": "https://sdhaulinganddemo.com/#services"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 2,
+            "name": "Furniture & Appliance Removal",
+            "description": "Sofas, mattresses, refrigerators, washers, dryers and more.",
+            "url": "https://sdhaulinganddemo.com/furniture-removal/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 3,
+            "name": "Demolition Services",
+            "description": "Licensed demolition and construction debris removal.",
+            "url": "https://sdhaulinganddemo.com/demolition-services/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 4,
+            "name": "Estate Cleanouts",
+            "description": "Compassionate, full-property estate and home cleanout service.",
+            "url": "https://sdhaulinganddemo.com/estate-cleanout/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 5,
+            "name": "Yard Waste Removal",
+            "description": "Brush, branches, soil and green waste hauling.",
+            "url": "https://sdhaulinganddemo.com/yard-waste-removal/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 6,
+            "name": "Commercial Junk Removal",
+            "description": "Office, retail, warehouse and property management cleanouts.",
+            "url": "https://sdhaulinganddemo.com/commercial-junk-removal/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 7,
+            "name": "Graffiti Removal",
+            "description": "Fast, clean graffiti removal for homes and businesses.",
+            "url": "https://sdhaulinganddemo.com/graffiti-removal/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 8,
+            "name": "Property Maintenance",
+            "description": "Ongoing maintenance services for landlords and property managers.",
+            "url": "https://sdhaulinganddemo.com/maintenance-services/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 9,
+            "name": "Photo Gallery",
+            "description": "Before-and-after photos of completed San Diego hauling jobs.",
+            "url": "https://sdhaulinganddemo.com/gallery/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 10,
+            "name": "Customer Reviews",
+            "description": "Verified 5-star reviews from San Diego County customers.",
+            "url": "https://sdhaulinganddemo.com/reviews/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 11,
+            "name": "Junk Removal Blog",
+            "description": "Pricing guides, tips, and answers for San Diego junk removal.",
+            "url": "https://sdhaulinganddemo.com/blog/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 12,
+            "name": "Get a Free Quote",
+            "description": "Request a free same-day junk removal quote.",
+            "url": "https://sdhaulinganddemo.com/#contact"
+        }
+    ]
+}
+  </script>
+  <!-- Schema.org: BreadcrumbList (homepage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sdhaulinganddemo.com/#breadcrumb",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sdhaulinganddemo.com/"
+        }
+    ]
 }
   </script>
   <!-- Schema.org: HowTo -->
@@ -504,7 +624,7 @@
             <li>TVs &amp; electronics</li>
           </ul>
         </a>
-        <div class="service-card">
+        <a class="service-card" href="demolition-services/">
           <div class="service-icon">&#127981;</div>
           <h3>Construction Debris</h3>
           <p>Renovation mess? We remove drywall, lumber, flooring, roofing, and all construction waste.</p>
@@ -514,7 +634,7 @@
             <li>Roofing materials</li>
             <li>Concrete &amp; dirt</li>
           </ul>
-        </div>
+        </a>
         <a class="service-card" href="estate-cleanout/">
           <div class="service-icon">&#127968;</div>
           <h3>Whole-Home Cleanouts</h3>
@@ -672,7 +792,7 @@
   </section>
 
   <!-- ===== SERVICE AREA ===== -->
-  <section class="section service-area-section" aria-label="Service Area">
+  <section class="section service-area-section" id="service-area" aria-label="Service Area">
     <div class="container">
       <div class="service-area-inner">
         <div class="service-area-text">
@@ -970,26 +1090,36 @@
       <div class="footer-links">
         <h4>Services</h4>
         <ul>
-          <li><a href="/furniture-removal/">Furniture &amp; Appliances</a></li>
-          <li><a href="/demolition-services/">Construction Debris</a></li>
-          <li><a href="/estate-cleanout/">Home Cleanouts</a></li>
-          <li><a href="/yard-waste-removal/">Yard Waste</a></li>
-          <li><a href="/commercial-junk-removal/">Commercial Removal</a></li>
-          <li><a href="/demolition-services/">Demolition Services</a></li>
-          <li><a href="/maintenance-services/">Maintenance Services</a></li>
+          <li><a href="/furniture-removal/">Furniture &amp; Appliance Removal</a></li>
+          <li><a href="/estate-cleanout/">Estate &amp; Home Cleanouts</a></li>
+          <li><a href="/yard-waste-removal/">Yard &amp; Green Waste</a></li>
+          <li><a href="/commercial-junk-removal/">Commercial Junk Removal</a></li>
+          <li><a href="/demolition-services/">Demolition &amp; Construction Debris</a></li>
+          <li><a href="/maintenance-services/">Property Maintenance</a></li>
           <li><a href="/graffiti-removal/">Graffiti Removal</a></li>
-          <li><a href="#services">Clean Disposal</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Company</h4>
         <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="/gallery/">Gallery</a></li>
-          <li><a href="/reviews/">Reviews</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/gallery/">Photo Gallery</a></li>
+          <li><a href="/reviews/">Customer Reviews</a></li>
+          <li><a href="/blog/">Blog &amp; Guides</a></li>
+          <li><a href="/#contact">Get a Free Quote</a></li>
           <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/junk-removal-san-diego/">San Diego</a></li>
+          <li><a href="/junk-removal-chula-vista/">Chula Vista</a></li>
+          <li><a href="/junk-removal-el-cajon/">El Cajon</a></li>
+          <li><a href="/junk-removal-escondido/">Escondido</a></li>
+          <li><a href="/junk-removal-oceanside/">Oceanside</a></li>
+          <li><a href="/junk-removal-carlsbad/">Carlsbad</a></li>
+          <li><a href="/#service-area">All San Diego County &rarr;</a></li>
         </ul>
       </div>
       <div class="footer-contact">
