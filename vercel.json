@@ -6,7 +6,26 @@
       "has": [{ "type": "host", "value": "www.sdhaulinganddemo.com" }],
       "destination": "https://sdhaulinganddemo.com/$1",
       "permanent": true
-    }
+    },
+
+    { "source": "/junk-removal-alpine/:path*",          "destination": "/junk-removal-el-cajon/",    "permanent": true },
+    { "source": "/junk-removal-bonita/:path*",          "destination": "/junk-removal-chula-vista/", "permanent": true },
+    { "source": "/junk-removal-coronado/:path*",        "destination": "/junk-removal-san-diego/",   "permanent": true },
+    { "source": "/junk-removal-del-mar/:path*",         "destination": "/junk-removal-carlsbad/",    "permanent": true },
+    { "source": "/junk-removal-encinitas/:path*",       "destination": "/junk-removal-carlsbad/",    "permanent": true },
+    { "source": "/junk-removal-fallbrook/:path*",       "destination": "/junk-removal-oceanside/",   "permanent": true },
+    { "source": "/junk-removal-imperial-beach/:path*",  "destination": "/junk-removal-chula-vista/", "permanent": true },
+    { "source": "/junk-removal-jamul/:path*",           "destination": "/junk-removal-el-cajon/",    "permanent": true },
+    { "source": "/junk-removal-lakeside/:path*",        "destination": "/junk-removal-el-cajon/",    "permanent": true },
+    { "source": "/junk-removal-lemon-grove/:path*",     "destination": "/junk-removal-la-mesa/",     "permanent": true },
+    { "source": "/junk-removal-national-city/:path*",   "destination": "/junk-removal-chula-vista/", "permanent": true },
+    { "source": "/junk-removal-ramona/:path*",          "destination": "/junk-removal-poway/",       "permanent": true },
+    { "source": "/junk-removal-rancho-santa-fe/:path*", "destination": "/junk-removal-carlsbad/",    "permanent": true },
+    { "source": "/junk-removal-san-marcos/:path*",      "destination": "/junk-removal-escondido/",   "permanent": true },
+    { "source": "/junk-removal-santee/:path*",          "destination": "/junk-removal-el-cajon/",    "permanent": true },
+    { "source": "/junk-removal-solana-beach/:path*",    "destination": "/junk-removal-carlsbad/",    "permanent": true },
+    { "source": "/junk-removal-spring-valley/:path*",   "destination": "/junk-removal-la-mesa/",     "permanent": true },
+    { "source": "/junk-removal-vista/:path*",           "destination": "/junk-removal-oceanside/",   "permanent": true }
   ],
   "headers": [
     {
