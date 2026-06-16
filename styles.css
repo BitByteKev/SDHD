@@ -2765,3 +2765,91 @@ a.service-card:hover {
   .ba-label-after { right: 12px; }
   .ba-handle { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
 }
+
+/* ---- Google reviews (Worker-fed) ---- */
+#google-reviews { min-height: 320px; }
+
+.gr-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.gr-avg {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.gr-stars { letter-spacing: 2px; color: var(--color-border); }
+.gr-star-on { color: var(--color-accent); }
+.gr-stars-sm { font-size: 0.9rem; }
+.gr-count {
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-accent);
+}
+.gr-count:hover { color: var(--color-primary); }
+
+.gr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.gr-card {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: gr-rise 0.5s ease forwards;
+}
+@keyframes gr-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gr-card { opacity: 1; animation: none; }
+}
+
+.gr-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.gr-avatar {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.gr-meta { display: flex; flex-direction: column; gap: 2px; }
+.gr-name { font-weight: 700; color: var(--color-text); }
+.gr-g {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+.gr-text {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 14px;
+}
+.gr-date { font-size: 0.85rem; color: var(--color-text-muted); margin-top: auto; }
+
+.gr-fallback { text-align: center; padding: 24px 0; }

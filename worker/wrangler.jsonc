@@ -1,0 +1,21 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "reviews-proxy",
+  "main": "reviews-proxy.js",
+  "compatibility_date": "2026-06-16",
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "REVIEWS_KV",
+      "id": "cccaf194d7404f48bd35e2c646fe5cad"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 9 * * *"]
+  },
+  "vars": {
+    "PLACE_ID": "ChIJ9QBHSL9W2YAR5SrSnmliT3c"
+  }
+}
