@@ -55,15 +55,18 @@ async function fetchFromGoogle(env) {
   return normalize(await res.json());
 }
 
+const CORS = {
+  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Vary': 'Origin',
+  'Content-Type': 'application/json',
+};
+
 export default {
-  async fetch(request, env) {
-    const cors = {
-      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-      'Cache-Control': 'public, max-age=21600',
-      'Content-Type': 'application/json',
-    };
+  async fetch(request, env, ctx) {
     if (request.method === 'OPTIONS') {
-      return new Response(null, { headers: cors });
+      return new Response(null, { headers: CORS });
     }
     let payload = await env.REVIEWS_KV.get(KV_KEY);
     if (!payload) {
@@ -73,18 +76,24 @@ export default {
       } catch (e) {
         return new Response(JSON.stringify({ error: 'unavailable' }), {
           status: 502,
-          headers: cors,
+          headers: { ...CORS, 'Cache-Control': 'no-store' },
         });
       }
     }
-    return new Response(payload, { headers: cors });
+    return new Response(payload, {
+      headers: { ...CORS, 'Cache-Control': 'public, max-age=21600' },
+    });
   },
 
   async scheduled(event, env, ctx) {
     ctx.waitUntil(
       (async function () {
-        const data = await fetchFromGoogle(env);
-        await env.REVIEWS_KV.put(KV_KEY, JSON.stringify(data));
+        try {
+          const data = await fetchFromGoogle(env);
+          await env.REVIEWS_KV.put(KV_KEY, JSON.stringify(data));
+        } catch (e) {
+          console.error('reviews-proxy scheduled refresh failed:', e);
+        }
       })()
     );
   },
