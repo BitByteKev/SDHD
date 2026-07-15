@@ -333,6 +333,14 @@ body:has(.blog-post-wrap) .navbar::before {
   border-bottom-color: var(--color-primary) !important;
 }
 
+.nav-links a.nav-phone {
+  color: var(--color-accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links a.nav-phone:hover { color: #fff; }
+
 .hamburger {
   display: none;
   flex-direction: column;

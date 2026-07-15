@@ -39,6 +39,13 @@
   </url>
 
   <url>
+    <loc>https://sdhaulinganddemo.com/adu-demolition/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://sdhaulinganddemo.com/estate-cleanout/</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -96,6 +103,20 @@
   </url>
 
   <!-- ================== TIER 4: BLOG POSTS ================== -->
+  <url>
+    <loc>https://sdhaulinganddemo.com/blog/garage-demolition-san-diego-adu/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sdhaulinganddemo.com/blog/adu-site-prep-checklist-san-diego/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://sdhaulinganddemo.com/blog/how-to-choose-junk-removal-san-diego/</loc>
     <lastmod>2026-05-16</lastmod>

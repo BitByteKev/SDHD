@@ -66,6 +66,26 @@
       }).join('');
 
       el.innerHTML = header + '<div class="gr-grid">' + cards + '</div>';
+
+      if (data.rating && data.total) {
+        var ld = document.createElement('script');
+        ld.type = 'application/ld+json';
+        ld.text = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          '@id': 'https://sdhaulinganddemo.com/#business',
+          'name': 'San Diego Hauling & Demo',
+          'url': 'https://sdhaulinganddemo.com',
+          'aggregateRating': {
+            '@type': 'AggregateRating',
+            'ratingValue': data.rating,
+            'bestRating': 5,
+            'worstRating': 1,
+            'ratingCount': data.total
+          }
+        });
+        document.head.appendChild(ld);
+      }
     })
     .catch(fallback);
 })();
