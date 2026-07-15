@@ -67,6 +67,19 @@
 
       el.innerHTML = header + '<div class="gr-grid">' + cards + '</div>';
 
+      var strip = document.getElementById('reviewStrip');
+      if (strip && data.rating && data.total) {
+        var q = (data.reviews[0] && data.reviews[0].text) || '';
+        if (q.length > 140) q = q.slice(0, 137).replace(/\s+\S*$/, '') + '…';
+        strip.innerHTML =
+          '<div class="review-strip-stars"><span class="gr-stars">' + stars(data.rating) + '</span>' +
+          '<strong>' + (data.rating || 0).toFixed(1) + '</strong> · ' +
+          '<a href="/reviews/">' + (data.total || 0) + ' Google reviews</a></div>' +
+          (q ? '<p class="review-strip-quote">“' + escapeHtml(q) + '”' +
+            (data.reviews[0].name ? ' <span class="review-strip-name">— ' + escapeHtml(data.reviews[0].name) + '</span>' : '') +
+            '</p>' : '');
+      }
+
       if (data.rating && data.total) {
         var ld = document.createElement('script');
         ld.type = 'application/ld+json';
