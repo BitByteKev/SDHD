@@ -137,11 +137,13 @@ animatableSelectors.forEach(selector => {
 // or (c) user has dismissed it this session.
 const floatingCta = document.getElementById('floatingCta');
 const floatingCtaClose = document.getElementById('floatingCtaClose');
-const hero = document.getElementById('home');
+// Sub-pages have a hero without id="home" — fall back to the .hero section.
+// If a page has no hero at all, start with the CTA eligible to show.
+const hero = document.getElementById('home') || document.querySelector('.hero');
 const contactSection = document.getElementById('contact');
 const FLOATING_CTA_DISMISS_KEY = 'floatingCtaDismissed';
 
-let heroVisible = true;
+let heroVisible = !!hero;
 let contactVisible = false;
 let ctaDismissed = false;
 try { ctaDismissed = sessionStorage.getItem(FLOATING_CTA_DISMISS_KEY) === '1'; } catch (_) {}
@@ -406,7 +408,7 @@ if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
   formData.append('service', document.getElementById('service').value);
   formData.append('size',    sizeEl ? sizeEl.value : 'not specified');
   formData.append('message', document.getElementById('message').value.trim());
-  formData.append('date',    document.getElementById('date').value || 'not specified');
+  formData.append('date',    document.getElementById('date')?.value || 'not specified');
   selectedFiles.forEach((file) => formData.append('photos', file));
 
   try {

@@ -3,7 +3,7 @@
   if (!el) return;
 
   var workerUrl = el.getAttribute('data-worker');
-  var googleUrl = 'http://google.com/localservices/review/sandiego619';
+  var googleUrl = 'https://maps.google.com/?cid=8597198419449228005';
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -28,6 +28,8 @@
   }
 
   function fallback() {
+    // Server-rendered static reviews may already be in the container — keep them.
+    if (el.querySelector('.gr-grid')) return;
     el.innerHTML =
       '<div class="gr-fallback"><a class="btn btn-primary btn-lg" target="_blank" ' +
       'rel="noopener" href="' + googleUrl + '">★ See our reviews on Google</a></div>';
