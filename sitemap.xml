@@ -5,7 +5,7 @@
   <!-- ================== TIER 1: HOMEPAGE ================== -->
   <url>
     <loc>https://sdhaulinganddemo.com/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sdhaulinganddemo.com/" />
@@ -15,7 +15,7 @@
 
   <url>
     <loc>https://sdhaulinganddemo.com/es/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sdhaulinganddemo.com/" />
@@ -26,56 +26,56 @@
   <!-- ================== TIER 2: SERVICE HUB PAGES (sitelink candidates) ================== -->
   <url>
     <loc>https://sdhaulinganddemo.com/furniture-removal/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/demolition-services/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/adu-demolition/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/estate-cleanout/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/yard-waste-removal/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/commercial-junk-removal/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/graffiti-removal/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/maintenance-services/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -90,14 +90,14 @@
 
   <url>
     <loc>https://sdhaulinganddemo.com/gallery/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://sdhaulinganddemo.com/blog/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -105,7 +105,7 @@
   <!-- ================== TIER 4: BLOG POSTS ================== -->
   <url>
     <loc>https://sdhaulinganddemo.com/blog/garage-demolition-san-diego-adu/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -240,7 +240,7 @@
 
   <url>
     <loc>https://sdhaulinganddemo.com/junk-removal-imperial-beach/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -282,7 +282,7 @@
 
   <url>
     <loc>https://sdhaulinganddemo.com/junk-removal-rancho-santa-fe/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
