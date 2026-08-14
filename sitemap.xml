@@ -95,49 +95,6 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ================== TIER 4: BLOG POSTS ================== -->
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/garage-demolition-san-diego-adu/</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/adu-site-prep-checklist-san-diego/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/how-to-choose-junk-removal-san-diego/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/how-much-does-junk-removal-cost-san-diego/</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sdhaulinganddemo.com/blog/what-can-junk-removal-companies-take/</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- ================== TIER 5: HIGH-VALUE CITY PAGES ================== -->
   <url>
     <loc>https://sdhaulinganddemo.com/junk-removal-san-diego/</loc>
