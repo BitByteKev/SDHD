@@ -8,8 +8,6 @@
       "permanent": true
     },
 
-    { "source": "/blog/:path*", "destination": "https://blog.sdhaulinganddemo.com/:path*", "permanent": true },
-
     { "source": "/junk-removal-alpine/:path*",          "destination": "/junk-removal-el-cajon/",    "permanent": true },
     { "source": "/junk-removal-bonita/:path*",          "destination": "/junk-removal-chula-vista/", "permanent": true },
     { "source": "/junk-removal-coronado/:path*",        "destination": "/junk-removal-san-diego/",   "permanent": true },
