@@ -615,10 +615,16 @@ body:has(.blog-post-wrap) .navbar::before {
 }
 
 /* Homepage conversion path */
+.hero-content--split { width: 100%; max-width: 1320px; }
+.hero-content--split .hero-highlight { display: block; }
+.hero-content--split .hero-copy { min-width: 0; }
+.hero-content--split .hero-trust { gap: 28px; flex-wrap: nowrap; }
+.hero-content--split .hero-sub { max-width: 640px; }
+
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .55fr);
-  gap: clamp(32px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  gap: clamp(32px, 5vw, 72px);
   align-items: center;
   text-align: left;
 }
@@ -681,6 +687,7 @@ body:has(.blog-post-wrap) .navbar::before {
 }
 
 .hero-proof small {
+  grid-column: 2;
   color: rgba(255,255,255,.62);
   display: block;
   font-size: .8rem;
@@ -3089,3 +3096,10 @@ a.service-card:hover {
 @media(max-width:760px){.refresh-grid,.crew-intro{grid-template-columns:1fr}.result-pair{gap:10px}.result-pair figcaption{padding:12px;font-size:.85rem}.crew-intro{gap:24px}.refresh-card{padding:22px}.hero-actions .btn{white-space:normal}.floating-btn{white-space:nowrap}}
 .pricing-explanation{color:#444}.refresh-link a:not(.btn),.crew-intro a,.quote-extras summary{color:var(--color-primary)}
 .dropoff-page .btn-outline{color:var(--color-primary);border-color:var(--color-primary)}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .hero-content--split .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hero-content--split .hero-proof { max-width: 680px; }
+  .hero-content--split .hero-proof ul { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+  .hero-content--split .hero-proof li { border-bottom: 0; }
+}
