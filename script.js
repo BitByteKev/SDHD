@@ -201,7 +201,7 @@ const validators = {
     return '';
   },
   email: (val) => {
-    if (!val.trim()) return 'Please enter your email address.';
+    if (!val.trim()) return document.getElementById('email')?.required ? 'Please enter your email address.' : '';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return 'Please enter a valid email address.';
     return '';
   },
@@ -219,6 +219,7 @@ const validators = {
 function showError(fieldId, message) {
   const field = document.getElementById(fieldId);
   const error = document.getElementById(fieldId + 'Error');
+  if (message && field?.closest('details')) field.closest('details').open = true;
   if (field) {
     field.classList.toggle('error', !!message);
     field.setAttribute('aria-invalid', !!message ? 'true' : 'false');
@@ -401,6 +402,12 @@ if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
   // Collect form data (multipart so photos can be attached)
   const sizeEl = quoteForm.querySelector('input[name="size"]:checked');
   const formData = new FormData();
+  formData.append('lead_reference', 'WEB-' + Date.now().toString(36).toUpperCase());
+  formData.append('landing_page', window.location.pathname);
+  const attribution = new URLSearchParams(window.location.search);
+  ['utm_source', 'utm_medium', 'utm_campaign'].forEach(key => {
+    if (attribution.has(key)) formData.append(key, attribution.get(key).slice(0, 200));
+  });
   formData.append('name',    document.getElementById('name').value.trim());
   formData.append('phone',   document.getElementById('phone').value.trim());
   formData.append('email',   document.getElementById('email').value.trim());
