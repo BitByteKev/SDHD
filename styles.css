@@ -2439,6 +2439,15 @@ a.service-card:hover {
   .hero-copy .trust-item { max-width: 100%; min-width: 0; }
   .hero-proof { text-align: left; width: 100%; }
 
+  /* Keep the split-home hero's intrinsic text from widening a phone viewport. */
+  .hero-content--split,
+  .hero-content--split .hero-copy,
+  .hero-content--split .hero-proof { max-width: 100%; min-width: 0; }
+  .hero-content--split .hero-badge { max-width: 100%; white-space: normal; }
+  .hero-content--split h1,
+  .hero-content--split .hero-sub,
+  .hero-content--split .hero-response-note { overflow-wrap: anywhere; }
+
   /* Homepage quote process */
   .quote-process-inner { align-items: flex-start; flex-direction: column; }
   .quote-process-intro { flex-basis: auto; }
