@@ -756,7 +756,7 @@ body:has(.blog-post-wrap) .navbar::before {
 }
 
 .quote-process-step small {
-  color: var(--color-text-muted);
+  color: var(--color-secondary-light);
   display: block;
   font-size: .8rem;
   line-height: 1.45;
@@ -3111,4 +3111,35 @@ a.service-card:hover {
   .hero-content--split .hero-proof { max-width: 680px; }
   .hero-content--split .hero-proof ul { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
   .hero-content--split .hero-proof li { border-bottom: 0; }
+}
+
+
+/* Review refinements: readable accents and a direct mobile quote path. */
+.section-label {
+  color: var(--color-primary);
+  text-transform: none;
+  letter-spacing: .02em;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.section-header h2, .contact-info h2, .service-area-text h2 {
+  text-transform: none;
+}
+.home-page .nav-links > a { white-space: nowrap; text-transform: none; }
+.home-page .navbar .logo-img { height: 68px; }
+.home-page .navbar .logo { flex-shrink: 0; }
+.home-page .refresh-card { border-top: 1px solid rgba(153,51,255,.35); }
+.home-page .contact-heading { max-width: 680px; margin-bottom: 28px; }
+.home-page .contact-heading h2 { font-size: clamp(1.7rem,3vw,2.3rem); line-height: 1.2; margin-bottom: 16px; }
+.home-page .contact-heading > p { line-height: 1.7; margin-bottom: 16px; }
+.home-page .contact-inner { grid-template-areas: "info form"; }
+.home-page .quote-form { grid-area: form; }
+.home-page .contact-info { grid-area: info; }
+.home-page #how-it-works { scroll-margin-top: 88px; }
+/* The existing contact bar provides the phone action on smaller screens. */
+@media (max-width: 768px) {
+  body:has(.floating-cta) .call-fab,
+  body:has(.floating-cta) .back-to-top { display: none; }
+  .home-page .contact-inner { grid-template-areas: "form" "info"; }
+  .home-page .navbar .logo-img { height: 60px; }
 }
