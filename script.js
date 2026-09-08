@@ -56,6 +56,7 @@ function setMenu(open) {
   navLinks.classList.toggle('open', open);
   hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   document.body.style.overflow = open ? 'hidden' : '';
+  navLinks.inert = !open && window.matchMedia('(max-width: 768px)').matches;
 }
 
 hamburger.addEventListener('click', () => {
@@ -65,6 +66,27 @@ hamburger.addEventListener('click', () => {
 // Close menu when a nav link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => setMenu(false));
+});
+
+// Keep the closed mobile menu out of keyboard navigation, including on resize.
+const menuBreakpoint = window.matchMedia('(max-width: 768px)');
+function syncMenuBreakpoint() { setMenu(false); }
+menuBreakpoint.addEventListener('change', syncMenuBreakpoint);
+syncMenuBreakpoint();
+
+// Keep keyboard focus in the expanded mobile navigation.
+document.addEventListener('keydown', (event) => {
+  if (!menuBreakpoint.matches || !navLinks.classList.contains('open')) return;
+  if (event.key === 'Escape') { setMenu(false); hamburger.focus(); return; }
+  if (event.key !== 'Tab') return;
+  const links = [...navLinks.querySelectorAll('a[href]')];
+  const first = links[0];
+  const last = hamburger;
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault(); last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault(); first?.focus();
+  }
 });
 
 // Close menu on outside click
@@ -90,7 +112,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       const navHeight = navbar.offsetHeight;
       const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      window.scrollTo({ top: targetPos, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     }
   });
 });
@@ -126,7 +148,7 @@ const animatableSelectors = [
 animatableSelectors.forEach(selector => {
   document.querySelectorAll(selector).forEach((el, i) => {
     el.classList.add('fade-in');
-    el.style.transitionDelay = `${i * 60}ms`;
+    el.style.transitionDelay = `${Math.min(i, 3) * 60}ms`;
     observer.observe(el);
   });
 });
@@ -508,6 +530,7 @@ function applyTilt(selector, baseCssTransform) {
     card.addEventListener('mousemove', (e) => {
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -532,7 +555,7 @@ function applyTilt(selector, baseCssTransform) {
 }
 
 // Only apply on devices that support hover (not touch-only)
-if (window.matchMedia('(hover: hover)').matches) {
+if (window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
   applyTilt('.service-card', '');
   applyTilt('.review-card', '');
   applyTilt('.pricing-card:not(.pricing-card--featured)', '');
