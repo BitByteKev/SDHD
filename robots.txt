@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sdhaulinganddemo.com/sitemap.xml
-IndexNow-Key: bb5e4485812c226eceafb4f4b74f1286
+# IndexNow verification key (served in the matching .txt file): bb5e4485812c226eceafb4f4b74f1286
