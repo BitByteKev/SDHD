@@ -469,6 +469,12 @@ if (quoteForm) quoteForm.addEventListener('submit', async (e) => {
       event_category: 'lead',
       event_label: document.getElementById('service')?.value || '',
     });
+    // Google Ads Contact conversion: only after Formspree accepts the submission.
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-976216312/8e9PCP3e_ssaEPjBv9ED',
+      });
+    }
 
   } catch (err) {
     submitBtn.disabled = false;
